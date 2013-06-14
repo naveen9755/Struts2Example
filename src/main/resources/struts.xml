@@ -6,7 +6,7 @@
 <struts>
     <constant name="struts.devMode" value="true" />
 	<package name="default" extends="struts-default">
-		<action name="videos" class="com.swift.example.video.action.VideoAction">
+		<action name="videos" class="com.swift.example.action.VideoAction">
 			<result name="SUCCESS">/videos.jsp</result>
 		</action>
 	</package>
