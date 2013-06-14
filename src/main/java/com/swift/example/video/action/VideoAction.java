@@ -1,9 +1,13 @@
 package com.swift.example.video.action;
 
+import org.apache.log4j.Logger;
+
 public class VideoAction {
 	
+	private static final Logger log = Logger.getLogger(VideoAction.class.getName());
+	
 	public String execute() {
-		System.out.println("Success Page...");
+		log.info("Success Page...");
 		return "SUCCESS";
 	}
 
