@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Videos Library</title>
 </head>
 <body>
-	<h1>Vidoes Here!!!</h1>
+	<h1>Videos Coming soon...</h1>
 </body>
 </html>
