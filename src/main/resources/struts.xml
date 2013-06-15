@@ -7,7 +7,10 @@
     <constant name="struts.devMode" value="true" />
 	<package name="default" extends="struts-default">
 		<action name="videos" class="com.swift.example.action.VideoAction">
-			<result name="SUCCESS">/videos.jsp</result>
+			<result name="videos">/videos.jsp</result>
+		</action>
+		<action name="music" class="com.swift.example.action.MusicAction">
+		    <result name="music">/music.jsp</result>
 		</action>
 	</package>
  

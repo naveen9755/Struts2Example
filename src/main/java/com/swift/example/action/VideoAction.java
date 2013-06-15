@@ -16,7 +16,7 @@ public class VideoAction {
 		videoService = new VideoServiceImpl();
 		setName(videoService.getName());
 		log.info("Name of Video: " + videoService.getName());
-		return "SUCCESS";
+		return "videos";
 	}
 
 	public String getName() {
