@@ -13,5 +13,12 @@
 		    <result name="music">/music.jsp</result>
 		</action>
 	</package>
+	
+	<package name="login" extends="struts-default">
+	    <action name="login" class="com.swift.example.action.LoginAction">
+	        <result name="success">/index.jsp</result>
+	        <result name="failure">/login.jsp</result>
+	    </action>
+	</package>
  
 </struts>
