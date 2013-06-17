@@ -1,15 +1,17 @@
 package com.swift.example.action;
 
-public class LoginAction {
+import com.opensymphony.xwork2.Action;
+
+public class LoginAction implements Action {
 	
 	private String username;
 	private String password;
 	
 	public String execute() {
 		if(getUsername().equals("suraj") && getPassword().equals("suraj")) {
-			return "success";
+			return SUCCESS;
 		}
-		return "failure";
+		return LOGIN;
 	}
 
 	public String getPassword() {

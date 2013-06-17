@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login::::::Struts 2 Example</title>
+<title>Login::Struts 2 Example</title>
 </head>
 <body>
 	<h1>Login Page</h1>

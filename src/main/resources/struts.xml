@@ -4,6 +4,10 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
  
 <struts>
+    
+    <!-- Included the separate login.xml file for separation of concern. -->
+    <include file="login.xml"/>
+    
     <constant name="struts.devMode" value="true" />
 	<package name="default" extends="struts-default">
 		<action name="videos" class="com.swift.example.action.VideoAction">
@@ -14,11 +18,10 @@
 		</action>
 	</package>
 	
-	<package name="login" extends="struts-default">
-	    <action name="login" class="com.swift.example.action.LoginAction">
-	        <result name="success">/index.jsp</result>
-	        <result name="failure">/login.jsp</result>
+	<!-- Dummy Class Mapping -->
+	<package name="index" extends="struts-default">
+	    <action name="index">
+	        <result>/index.jsp</result>
 	    </action>
 	</package>
- 
 </struts>
