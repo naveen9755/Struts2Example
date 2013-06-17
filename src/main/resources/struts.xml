@@ -7,14 +7,12 @@
     
     <!-- Included the separate login.xml file for separation of concern. -->
     <include file="login.xml"/>
+    <include file="music.xml"/>
     
     <constant name="struts.devMode" value="true" />
 	<package name="default" extends="struts-default">
 		<action name="videos" class="com.swift.example.action.VideoAction">
 			<result name="success">/videos.jsp</result>
-		</action>
-		<action name="music" class="com.swift.example.action.MusicAction">
-		    <result name="success">/music.jsp</result>
 		</action>
 	</package>
 	

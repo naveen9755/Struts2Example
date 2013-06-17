@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+	<package name="music" extends="struts-default" namespace="/music">
+        <action name="addMusic" class="com.swift.example.action.MusicAction" method="addMusic">
+		    <result name="success">/music.jsp</result>
+	    </action>
+	    
+        <action name="editMusic" class="com.swift.example.action.MusicAction" method="editMusic">
+		    <result name="success">/music.jsp</result>
+	    </action>
+	    
+        <action name="removeMusic" class="com.swift.example.action.MusicAction" method="removeMusic">
+		    <result name="success">/music.jsp</result>
+	    </action>
+	    
+        <action name="allMusic" class="com.swift.example.action.MusicAction" method="listMusic">
+		    <result name="success">/music.jsp</result>
+	    </action>
+	</package>
+</struts>

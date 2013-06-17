@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>Music and Videos Library</h1>
-	<s:a href="music">Music</s:a>||
+	<s:a href="music/allMusic">Music</s:a>||
 	<s:a href="videos">Videos</s:a>
 </body>
 </html>
