@@ -3,6 +3,7 @@ package com.swift.example.action;
 import org.apache.log4j.Logger;
 
 import com.opensymphony.xwork2.Action;
+import com.swift.example.service.VideoService;
 import com.swift.example.serviceimpl.VideoServiceImpl;
 
 public class VideoAction implements Action {
@@ -10,7 +11,7 @@ public class VideoAction implements Action {
 	private static final Logger log = Logger.getLogger(VideoAction.class.getName());
 	
 	private String name;
-	private VideoServiceImpl videoService;
+	private VideoService videoService;
 	
 	public String execute() {
 		log.info("Success Page...");

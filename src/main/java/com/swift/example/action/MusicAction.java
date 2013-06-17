@@ -3,6 +3,7 @@ package com.swift.example.action;
 import org.apache.log4j.Logger;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.swift.example.service.MusicService;
 import com.swift.example.serviceimpl.MusicServiceImpl;
 
 public class MusicAction extends ActionSupport {
@@ -11,7 +12,7 @@ public class MusicAction extends ActionSupport {
 
 	private static final Logger log = Logger.getLogger(MusicAction.class.getName());
 	
-	private MusicServiceImpl musicService = new MusicServiceImpl();
+	private MusicService musicService = new MusicServiceImpl();
 	
 	public String addMusic() {
 		log.info("Inside Add Music....");

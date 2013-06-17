@@ -3,45 +3,36 @@ package com.swift.example.action;
 import org.apache.commons.lang3.StringUtils;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import com.swift.example.model.User;
+import com.swift.example.service.UserService;
+import com.swift.example.serviceimpl.UserServiceImpl;
 
-public class LoginAction extends ActionSupport {
+public class LoginAction extends ActionSupport implements ModelDriven<User> {
 	
 	private static final long serialVersionUID = 1L;
-	private String username;
-	private String password;
+	private User user = new User();
+	private UserService userService = new UserServiceImpl();
 	
 	public void validate() {
-		if(StringUtils.isEmpty(getUsername())) {
+		if(StringUtils.isEmpty(user.getUsername())) {
 			addFieldError("username", "Username cannot be blank");
 		}
 		
-		if(StringUtils.isEmpty(getPassword())) {
+		if(StringUtils.isEmpty(user.getPassword())) {
 			addFieldError("password", "Password cannot be blank");
 		}
 	}
 	
 	public String execute() {
-		if(getUsername().equals("suraj") && getPassword().equals("suraj")) {
+		if(userService.verifyUser(user)) {
 			return SUCCESS;
 		}
 		return LOGIN;
 	}
 
-	public String getPassword() {
-		return password;
+	@Override
+	public User getModel() {
+		return user;
 	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	
-	
 }
