@@ -10,7 +10,7 @@
 <body>
 	<h1>Login Page</h1>
 	<s:form action="login">
-		<s:textfield label="User Id" key="username"/>
+		<s:textfield label="Username" key="username"/>
 		<s:password label="Password" key="password"/>
 		<s:submit label="Login"/>
 	</s:form>

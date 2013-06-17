@@ -1,11 +1,24 @@
 package com.swift.example.action;
 
-import com.opensymphony.xwork2.Action;
+import org.apache.commons.lang3.StringUtils;
 
-public class LoginAction implements Action {
+import com.opensymphony.xwork2.ActionSupport;
+
+public class LoginAction extends ActionSupport {
 	
+	private static final long serialVersionUID = 1L;
 	private String username;
 	private String password;
+	
+	public void validate() {
+		if(StringUtils.isEmpty(getUsername())) {
+			addFieldError("username", "Username cannot be blank");
+		}
+		
+		if(StringUtils.isEmpty(getPassword())) {
+			addFieldError("password", "Password cannot be blank");
+		}
+	}
 	
 	public String execute() {
 		if(getUsername().equals("suraj") && getPassword().equals("suraj")) {

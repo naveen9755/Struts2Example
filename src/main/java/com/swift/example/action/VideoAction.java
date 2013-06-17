@@ -2,9 +2,10 @@ package com.swift.example.action;
 
 import org.apache.log4j.Logger;
 
+import com.opensymphony.xwork2.Action;
 import com.swift.example.serviceimpl.VideoServiceImpl;
 
-public class VideoAction {
+public class VideoAction implements Action {
 	
 	private static final Logger log = Logger.getLogger(VideoAction.class.getName());
 	
@@ -16,7 +17,7 @@ public class VideoAction {
 		videoService = new VideoServiceImpl();
 		setName(videoService.getName());
 		log.info("Name of Video: " + videoService.getName());
-		return "videos";
+		return SUCCESS;
 	}
 
 	public String getName() {
