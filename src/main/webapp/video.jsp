@@ -8,6 +8,6 @@
 <title>Videos Library</title>
 </head>
 <body>
-	<h1>Videos <s:property value="name"/></h1>
+	<h1>Videos Coming Soon ..........</h1>
 </body>
 </html>
