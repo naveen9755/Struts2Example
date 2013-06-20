@@ -5,11 +5,11 @@
 	<persistence-unit name="PU_STRUTS">
 		<class>com.swift.example.model.Music</class>
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:h2:tcp://localhost/~/test" />
-            <property name="hibernate.connection.driver_class" value="org.h2.Driver" />
-            <property name="hibernate.connection.password" value="sa" />
-            <property name="hibernate.connection.username" value="suraj" />
-            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/test" />
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+            <property name="hibernate.connection.password" value="suraj@123" />
+            <property name="hibernate.connection.username" value="postgres" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
         </properties>
 	</persistence-unit>
 </persistence>
