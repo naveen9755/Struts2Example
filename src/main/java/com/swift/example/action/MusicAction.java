@@ -22,14 +22,10 @@ public class MusicAction extends ActionSupport implements ModelDriven<Music>{
 
 	private static final Logger log = Logger.getLogger(MusicAction.class.getName());
 	
-	private Music music;
+	private Music music = new Music();
 	private List<Music> musicList = new ArrayList<Music>();
 	
 	private MusicService musicService = new MusicServiceImpl();
-	
-	public MusicAction() {
-		this.music = new Music();
-	}
 	
 	public String addMusic() {
 		log.info("Music Data: ");
@@ -55,7 +51,7 @@ public class MusicAction extends ActionSupport implements ModelDriven<Music>{
 	}
 	
 	public String listMusic() {
-		
+		musicList = musicService.listMusic();
 		return SUCCESS;
 	}
 

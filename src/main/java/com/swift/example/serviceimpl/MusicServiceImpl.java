@@ -27,10 +27,13 @@ public class MusicServiceImpl implements MusicService {
 	public void addMusic(Music music) throws SecurityException {
 		try {
 			log.info("Album: " + music.getAlbum());
-			em.persist(music);
-			em.flush();
-			em.refresh(music);
+			this.em.getTransaction().begin();
+			this.em.persist(music);
+			this.em.flush();
+			this.em.refresh(music);
+			this.em.getTransaction().commit();
 		} catch (Exception ex) {
+			this.em.getTransaction().rollback();
             log.info("Inside Persist Exception....");
             log.info(ex.getMessage());
             ex.printStackTrace();
@@ -41,7 +44,7 @@ public class MusicServiceImpl implements MusicService {
 	@Override
 	public List<Music> listMusic() {
         try {
-            return em.createQuery("from Music").getResultList();
+            return this.em.createQuery("from Music").getResultList();
         } finally {
             em.close();
         }

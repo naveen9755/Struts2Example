@@ -32,30 +32,30 @@
 			<version>2.3.14.3</version>
 	    </dependency>
 	 
-		<!-- Annotation processor to generate the JPA 2.0 metamodel classes for 
-			typesafe criteria queries -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>3.6.7.Final</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.0-api</artifactId>
 			<version>1.0.1.Final</version>
 		</dependency>
 		
+		<dependency>  
+      		<groupId>org.hibernate</groupId>  
+      		<artifactId>hibernate-entitymanager</artifactId>  
+      		<version>3.6.7.Final</version>  
+    	</dependency>
+		
 		<dependency>
 			<groupId>javax.transaction</groupId>
 			<artifactId>jta</artifactId>
 			<version>1.1</version>
 		</dependency>
-
-		<!-- JSR-303 (Bean Validation) Implementation -->
-		<!-- Provides portable constraints such as @Email -->
-		<!-- Hibernate Validator is shipped in JBoss AS 7 -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>4.1.1.Final</version>
-		</dependency>
 		
-		<!-- Needed for running tests (you may also use TestNG) -->
 		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
@@ -75,12 +75,6 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>org.jboss.spec.javax.servlet</groupId>
-			<artifactId>jboss-servlet-api_3.0_spec</artifactId>
-			<version>1.0.2.Final</version>
-		</dependency>
-		
-		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.6.2</version>
@@ -90,6 +84,12 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.6.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-servlet-api</artifactId>
+			<version>7.0.40</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -103,13 +103,6 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-			<plugin>
-            	<groupId>org.jboss.as.plugins</groupId>
-            	<artifactId>jboss-as-maven-plugin</artifactId>
-            	<configuration>
-               		<skip>false</skip>
-            	</configuration>
-         	</plugin>
 		</plugins>
 	</build>
 </project>
