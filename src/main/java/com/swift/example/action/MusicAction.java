@@ -1,40 +1,74 @@
 package com.swift.example.action;
 
-import org.apache.log4j.Logger;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
+import org.apache.struts2.ServletActionContext;
+
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import com.swift.example.model.Music;
 import com.swift.example.service.MusicService;
 import com.swift.example.serviceimpl.MusicServiceImpl;
 
-public class MusicAction extends ActionSupport {
+public class MusicAction extends ActionSupport implements ModelDriven<Music>{
 
 	private static final long serialVersionUID = 1L;
 
 	private static final Logger log = Logger.getLogger(MusicAction.class.getName());
 	
+	private Music music;
+	private List<Music> musicList = new ArrayList<Music>();
+	
 	private MusicService musicService = new MusicServiceImpl();
 	
+	public MusicAction() {
+		this.music = new Music();
+	}
+	
 	public String addMusic() {
-		log.info("Inside Add Music....");
-		log.info(musicService.addMusic());
+		log.info("Music Data: ");
+		log.info("Name: " + music.getName());
+		log.info("Singer: " + music.getSinger());
+		log.info("Album: " + music.getAlbum());
+		log.info("Composer: " + music.getComposer());
+		log.info("Lyricist: " + music.getLyricist());
+		music.setCreateOn(new Date());
+		musicService.addMusic(music);
 		return SUCCESS;
 	}
 	
 	public String editMusic() {
-		log.info("Edit Music: " + musicService.editMusic());
 		return SUCCESS;
 	}
 	
 	public String removeMusic() {
-		log.info("Remove Music: " + musicService.removeMusic());
+		log.info("Remove Music...");
+		HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+		musicService.removeMusic(Long.parseLong(request.getParameter("id")));
 		return SUCCESS;
 	}
 	
 	public String listMusic() {
-		log.info("Size of Music: " + musicService.listMusic().size());
-		for(int i=0; i<musicService.listMusic().size(); i++) {
-			log.info("Music: " + musicService.listMusic().get(i));
-		}
+		
 		return SUCCESS;
+	}
+
+	@Override
+	public Music getModel() {
+		return music;
+	}
+
+	public List<Music> getMusicList() {
+		return musicList;
+	}
+
+	public void setMusicList(List<Music> musicList) {
+		this.musicList = musicList;
 	}
 }

@@ -1,6 +1,6 @@
 package com.swift.example.action;
 
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -8,7 +8,7 @@ import com.swift.example.model.User;
 import com.swift.example.service.UserService;
 import com.swift.example.serviceimpl.UserServiceImpl;
 
-public class LoginAction extends ActionSupport implements ModelDriven<User> {
+public class LoginAction extends ActionSupport implements ModelDriven<User>{
 	
 	private static final long serialVersionUID = 1L;
 	private User user = new User();
@@ -30,7 +30,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<User> {
 		}
 		return LOGIN;
 	}
-
+	
 	@Override
 	public User getModel() {
 		return user;
