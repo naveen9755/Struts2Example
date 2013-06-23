@@ -1,23 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<%@ taglib prefix="s" uri="/struts-tags"%>
-<title>Music Page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Music Page</title>
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.css">
 </head>
 <body>
-	<h1>Music Page.</h1>
+	<div class="container">
+	<h1>Music</h1>
+	<a href='<s:url namespace="/" action="index"/>'>Home</a> ||
+	<a href="<%=request.getContextPath()%>">Logout</a>
+   	<hr/>
 	<s:form action="addMusic">
 		<s:push value="music">
 			<s:hidden name="id"/>
-			<s:textfield name="name" label="Name" requiredLabel="*"/>
-			<s:textfield name="singer" label="Singer" requiredLabel="*"/>
-			<s:textfield name="album" label="Album" requiredLabel="*"/>
-			<s:textfield name="composer" label="Composer" requiredLabel="*"/>
-			<s:textfield name="lyricist" label="Lyricist" requiredLabel="*"/>
-			<s:submit/>
+			<s:textfield name="name" cssClass="input-block-level" placeholder="Name of Song"/>
+			<s:textfield name="singer" cssClass="input-block-level" placeholder="Singer"/>
+			<s:textfield name="album" cssClass="input-block-level" placeholder="Album"/>
+			<s:textfield name="composer" cssClass="input-block-level" placeholder="Composer"/>
+			<s:textfield name="lyricist" cssClass="input-block-level" placeholder="Lyricist"/>
+			<s:submit value="Submit" cssClass="btn btn-primary"/>
 		</s:push>
    </s:form>
    	<s:if test="musicList.size() > 0">
@@ -61,7 +66,6 @@
    	</s:iterator>
    	</table>
    	</s:if>
-   <p>
-   <a href='<s:url namespace="/" action="index"/>'>Back</a>
+   </div>
 </body>
 </html>

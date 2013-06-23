@@ -28,6 +28,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<User>{
 		if(userService.verifyUser(user)) {
 			return SUCCESS;
 		}
+		addFieldError("username", "Invalid Username and Password...");
 		return LOGIN;
 	}
 	
