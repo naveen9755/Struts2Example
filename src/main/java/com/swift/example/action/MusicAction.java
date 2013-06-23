@@ -24,7 +24,6 @@ public class MusicAction extends ActionSupport implements ModelDriven<Music>{
 	
 	private Music music = new Music();
 	private List<Music> musicList = new ArrayList<Music>();
-	
 	private MusicService musicService = new MusicServiceImpl();
 	
 	public String addMusic() {
@@ -40,6 +39,9 @@ public class MusicAction extends ActionSupport implements ModelDriven<Music>{
 	}
 	
 	public String editMusic() {
+		HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+		log.info("Music ID: " + request.getParameter("id"));
+		music = musicService.listMusicById(Long.parseLong(request.getParameter("id")));
 		return SUCCESS;
 	}
 	
@@ -59,6 +61,14 @@ public class MusicAction extends ActionSupport implements ModelDriven<Music>{
 	@Override
 	public Music getModel() {
 		return music;
+	}
+	
+	public Music getMusic() {
+		return music;
+	}
+
+	public void setMusic(Music music) {
+		this.music = music;
 	}
 
 	public List<Music> getMusicList() {

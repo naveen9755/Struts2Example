@@ -26,12 +26,22 @@ public class MusicServiceImpl implements MusicService {
 	@Override
 	public void addMusic(Music music) throws SecurityException {
 		try {
-			log.info("Album: " + music.getAlbum());
-			this.em.getTransaction().begin();
-			this.em.persist(music);
-			this.em.flush();
-			this.em.refresh(music);
-			this.em.getTransaction().commit();
+			log.info("Inside Add or Update Music Page....");
+			if(music.getId() != null) {
+				this.em.getTransaction().begin();
+				Music m1 = this.listMusicById(music.getId());
+				this.em.getTransaction().commit();
+				if(m1 != null) {
+					updateMusic(music);
+				}
+			} else {
+				log.info("Album: " + music.getAlbum());
+				this.em.getTransaction().begin();
+				this.em.persist(music);
+				this.em.flush();
+				this.em.refresh(music);
+				this.em.getTransaction().commit();
+			}
 		} catch (Exception ex) {
 			this.em.getTransaction().rollback();
             log.info("Inside Persist Exception....");
@@ -69,5 +79,30 @@ public class MusicServiceImpl implements MusicService {
 	@Override
 	public void updateMusic(Music music) {
 		log.info("inside edit music");
+		try {
+			log.info("Music Singer: " + music.getSinger());
+			this.em.getTransaction().begin();
+			this.em.merge(music);
+			this.em.flush();
+			this.em.getTransaction().commit();
+			log.info("Music Updated...");
+		} catch(Exception ex) {
+			this.em.getTransaction().rollback();
+			log.info("Inside Update Exception of Persistence API....");
+			log.info(ex.getMessage());
+			ex.printStackTrace();
+		}
+	}
+
+
+	@Override
+	public Music listMusicById(Long id) {
+		Music music = null;
+		try {
+			music = this.em.getReference(Music.class, id);
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		return music;
 	}
 }

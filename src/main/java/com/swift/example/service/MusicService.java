@@ -13,4 +13,6 @@ public interface MusicService {
 	public void removeMusic(Long id);
 	
 	public void updateMusic(Music music);
+	
+	public Music listMusicById(Long id);
 }
