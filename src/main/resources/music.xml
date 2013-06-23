@@ -6,7 +6,7 @@
 <struts>
 	<package name="music" extends="struts-default" namespace="/music">
         <action name="addMusic" class="com.swift.example.action.MusicAction" method="addMusic">
-		    <result name="success" type="redirect">/index.jsp</result>
+		    <result name="success" type="redirect">listMusic.html</result>
 	    </action>
 	    
         <action name="editMusic" class="com.swift.example.action.MusicAction" method="editMusic">
@@ -14,7 +14,7 @@
 	    </action>
 	    
         <action name="removeMusic" class="com.swift.example.action.MusicAction" method="removeMusic">
-		    <result name="success" type="redirect">/index.jsp</result>
+		    <result name="success" type="redirect">listMusic.html</result>
 	    </action>
 	    
         <action name="listMusic" class="com.swift.example.action.MusicAction" method="listMusic">

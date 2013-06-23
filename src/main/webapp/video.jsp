@@ -9,5 +9,6 @@
 </head>
 <body>
 	<h1>Videos Coming Soon ..........</h1>
+	<a href='<s:url namespace="/" action="index"/>'>Back</a>
 </body>
 </html>

@@ -12,15 +12,16 @@
 	<s:form action="addMusic">
 		<s:push value="music">
 			<s:hidden name="id"/>
-			<s:textfield name="name" label="Name"/>
-			<s:textfield name="singer" label="Singer"/>
-			<s:textfield name="album" label="Album"/>
-			<s:textfield name="composer" label="Composer"/>
-			<s:textfield name="lyricist" label="Lyricist"/>
+			<s:textfield name="name" label="Name" requiredLabel="*"/>
+			<s:textfield name="singer" label="Singer" requiredLabel="*"/>
+			<s:textfield name="album" label="Album" requiredLabel="*"/>
+			<s:textfield name="composer" label="Composer" requiredLabel="*"/>
+			<s:textfield name="lyricist" label="Lyricist" requiredLabel="*"/>
 			<s:submit/>
 		</s:push>
    </s:form>
-   <table>
+   	<s:if test="musicList.size() > 0">
+   	<table>
    	<tr>
    		<th>Name</th>
    		<th>Singer</th>
@@ -28,7 +29,6 @@
    		<th>Composer</th>
    		<th>Lyricist</th>
    	</tr>
-   	<s:if test="musicList.size() > 0">
    	<s:iterator value="musicList" status="musicStatus">
    		<tr>
    			<s:if test="#musicStatus.even == true">
@@ -59,8 +59,8 @@
    			</td>
    		</tr>
    	</s:iterator>
+   	</table>
    	</s:if>
-   </table>
    <p>
    <a href='<s:url namespace="/" action="index"/>'>Back</a>
 </body>
