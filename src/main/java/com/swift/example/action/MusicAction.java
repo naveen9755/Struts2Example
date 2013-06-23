@@ -46,6 +46,7 @@ public class MusicAction extends ActionSupport implements ModelDriven<Music>{
 	public String removeMusic() {
 		log.info("Remove Music...");
 		HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+		log.info("Music ID: " + request.getParameter("id"));
 		musicService.removeMusic(Long.parseLong(request.getParameter("id")));
 		return SUCCESS;
 	}

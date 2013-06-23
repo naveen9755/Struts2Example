@@ -52,7 +52,18 @@ public class MusicServiceImpl implements MusicService {
 
 	@Override
 	public void removeMusic(Long id) {
-		
+		try {
+			this.em.getTransaction().begin();
+			Music music	= this.em.getReference(Music.class, id);
+			this.em.remove(music);
+			this.em.flush();
+			this.em.getTransaction().commit();
+		} catch (Exception ex) {
+			this.em.getTransaction().rollback();
+			log.info("Inside Remove Exception of Persistence API....");
+			log.info(ex.getMessage());
+			ex.printStackTrace();
+		}
 	}
 
 	@Override
