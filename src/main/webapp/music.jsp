@@ -51,16 +51,16 @@
    				<td style="background: #AAAAAA"><s:property value="lyricist"/></td>
    			</s:if>
    			<td>
-   				<s:url id="deleteURL" namespace="/music" action="removeMusic">
-   					<s:param name="id" value="%{id}"></s:param>
-   				</s:url>
-   				<s:a href="%{deleteURL}">Delete</s:a>
-   			</td>
-   			<td>
 	   			<s:url id="editURL" namespace="/music" action="editMusic">
 	   				<s:param name="id" value="%{id}"></s:param>
 	   			</s:url>
 	   			<s:a href="%{editURL}">Edit</s:a>
+   			</td>
+   			<td>
+   				<s:url id="deleteURL" namespace="/music" action="removeMusic">
+   					<s:param name="id" value="%{id}"></s:param>
+   				</s:url>
+   				<s:a href="%{deleteURL}">Delete</s:a>
    			</td>
    		</tr>
    	</s:iterator>

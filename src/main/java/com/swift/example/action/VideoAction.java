@@ -33,6 +33,8 @@ public class VideoAction extends ActionSupport implements ModelDriven<Video>{
 	
 	public String editVideo() {
 		log.info("Edit Video ");
+		HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+		video = videoService.getVideo(Long.parseLong(request.getParameter("id")));
 		return SUCCESS;
 	}
 	

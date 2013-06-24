@@ -51,6 +51,12 @@
 	   				<td style="background: #AAAAAA"><s:property value="category"/></td>
 	   			</s:if>
 	   			<td>
+	   				<s:url id="editURL" namespace="/video" action="editVideo">
+	   					<s:param name="id" value="%{id}"></s:param>
+	   				</s:url>
+	   				<s:a href="%{editURL}">Edit</s:a>
+   				</td>
+	   			<td>
 	   				<s:url id="deleteURL" namespace="/video" action="removeVideo">
 	   					<s:param name="id" value="%{id}"></s:param>
 	   				</s:url>

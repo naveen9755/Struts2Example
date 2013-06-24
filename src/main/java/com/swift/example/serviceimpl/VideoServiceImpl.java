@@ -25,13 +25,27 @@ public class VideoServiceImpl implements VideoService {
 	@Override
 	public void addVideo(Video video) {
 		log.info("Adding Videos...");
+		log.info("Inside Add or Update Music Page....");
 		try {
-			this.em.getTransaction().begin();
-			this.em.persist(video);
-			this.em.flush();
-			this.em.refresh(video);
-			this.em.getTransaction().commit();
-			log.info("Video Added....");
+			if(video.getId() != null) {
+				this.em.getTransaction().begin();
+				Video v1 = this.getVideo(video.getId());
+				this.em.getTransaction().commit();
+				if(v1 != null) {
+					log.info("Updating the Video....");
+					this.em.getTransaction().begin();
+					this.em.merge(video);
+					this.em.flush();
+					this.em.getTransaction().commit();
+				}
+			} else {
+				this.em.getTransaction().begin();
+				this.em.persist(video);
+				this.em.flush();
+				this.em.refresh(video);
+				this.em.getTransaction().commit();
+				log.info("Video Added....");
+			}
 		} catch(Exception ex) {
 			this.em.getTransaction().rollback();
 			ex.printStackTrace();
@@ -59,5 +73,10 @@ public class VideoServiceImpl implements VideoService {
 			log.info(ex.getMessage());
 			ex.printStackTrace();
 		}
+	}
+
+	@Override
+	public Video getVideo(Long id) {
+		return this.em.getReference(Video.class, id);
 	}
 }
