@@ -1,6 +1,18 @@
 package com.swift.example.model;
 
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Video")
 public class Video {
+	
+	private Long id;
 
 	private String name;
 	
@@ -10,8 +22,22 @@ public class Video {
 	
 	private String writer;
 	
-	private String location;
+	private String category;
+	
+	private Date createdOn;
+	
+	@Id
+	@GeneratedValue
+	@Column(name = "VIDEO_ID")
+	public Long getId() {
+		return id;
+	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	@Column(name = "NAME")
 	public String getName() {
 		return name;
 	}
@@ -20,6 +46,7 @@ public class Video {
 		this.name = name;
 	}
 
+	@Column(name = "ACTOR")
 	public String getActor() {
 		return actor;
 	}
@@ -28,6 +55,7 @@ public class Video {
 		this.actor = actor;
 	}
 
+	@Column(name = "DIRECTOR")
 	public String getDirector() {
 		return director;
 	}
@@ -36,6 +64,7 @@ public class Video {
 		this.director = director;
 	}
 
+	@Column(name = "WRITER")
 	public String getWriter() {
 		return writer;
 	}
@@ -44,11 +73,21 @@ public class Video {
 		this.writer = writer;
 	}
 
-	public String getLocation() {
-		return location;
+	@Column(name = "CATEGORY")
+	public String getCategory() {
+		return category;
 	}
 
-	public void setLocation(String location) {
-		this.location = location;
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	@Column(name = "CREATED_ON")
+	public Date getCreatedOn() {
+		return createdOn;
+	}
+
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
 	}
 }

@@ -12,7 +12,7 @@
 	<div class="container">
 		<h1>Music and Videos Library</h1>
 		<a href="<s:url namespace="music" action="listMusic"/>">Music</a> ||
-		<a href="<s:url namespace="video" action="allVideo"/>">Videos</a> ||
+		<a href="<s:url namespace="video" action="listVideo"/>">Videos</a> ||
 		<a href="<%=request.getContextPath()%>">Logout</a>
 		<hr/>
 	</div>

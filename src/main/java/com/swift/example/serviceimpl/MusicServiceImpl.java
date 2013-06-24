@@ -53,11 +53,7 @@ public class MusicServiceImpl implements MusicService {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Music> listMusic() {
-        try {
-            return this.em.createQuery("from Music").getResultList();
-        } finally {
-            em.close();
-        }
+		return this.em.createQuery("from Music").getResultList();
 	}
 
 	@Override

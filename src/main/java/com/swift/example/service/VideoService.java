@@ -2,13 +2,14 @@ package com.swift.example.service;
 
 import java.util.List;
 
+import com.swift.example.model.Video;
+
 public interface VideoService {
 	
-	public long addVideo();
+	public void addVideo(Video video);
 	
-	public List<String> listVideo();
+	public List<Video> listVideo();
 	
-	public boolean removeVideo();
+	public void removeVideo(Long id);
 	
-	public long editVideo();
 }

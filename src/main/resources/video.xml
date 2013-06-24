@@ -6,7 +6,7 @@
 <struts>
 	<package name="video" extends="struts-default" namespace="/video">
         <action name="addVideo" class="com.swift.example.action.VideoAction" method="addVideo">
-		    <result name="success">/video.jsp</result>
+		    <result name="success" type="redirect">listVideo.html</result>
 	    </action>
 	    
         <action name="editVideo" class="com.swift.example.action.VideoAction" method="editVideo">
@@ -14,10 +14,10 @@
 	    </action>
 	    
         <action name="removeVideo" class="com.swift.example.action.VideoAction" method="removeVideo">
-		    <result name="success">/video.jsp</result>
+		    <result name="success" type="redirect">listVideo.html</result>
 	    </action>
 	    
-        <action name="allVideo" class="com.swift.example.action.VideoAction" method="listVideo">
+        <action name="listVideo" class="com.swift.example.action.VideoAction" method="listVideo">
 		    <result name="success">/video.jsp</result>
 	    </action>
 	</package>
