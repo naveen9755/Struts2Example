@@ -2,6 +2,14 @@ package com.swift.example.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Users")
 public class User {
 	
 	private Long id;
@@ -10,6 +18,9 @@ public class User {
 	private Date created_on;
 	private Date modified_on;
 	
+	@Id
+	@GeneratedValue
+	@Column(name = "USER_ID")
 	public Long getId() {
 		return id;
 	}
@@ -18,6 +29,7 @@ public class User {
 		this.id = id;
 	}
 
+	@Column(name = "USERNAME")
 	public String getUsername() {
 		return username;
 	}
@@ -26,6 +38,7 @@ public class User {
 		this.username = username;
 	}
 	
+	@Column(name = "PASSWORD")
 	public String getPassword() {
 		return password;
 	}
@@ -34,6 +47,7 @@ public class User {
 		this.password = password;
 	}
 
+	@Column(name = "CREATED_ON")
 	public Date getCreated_on() {
 		return created_on;
 	}
@@ -42,6 +56,7 @@ public class User {
 		this.created_on = created_on;
 	}
 
+	@Column(name = "MODIFIED_ON")
 	public Date getModified_on() {
 		return modified_on;
 	}
