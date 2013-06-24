@@ -6,7 +6,7 @@
 <struts>
 	<package name="login" extends="struts-default">
 	    <action name="login" class="com.swift.example.action.LoginAction">
-	        <result name="success">/index.jsp</result>
+	        <result name="success" type="redirect">/index.html</result>
 	        <result name="login">/login.jsp</result>
 	        <result name="input">/login.jsp</result>
 	    </action>
