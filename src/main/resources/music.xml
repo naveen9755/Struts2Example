@@ -4,6 +4,7 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
  
 <struts>
+    <bean class="com.swift.example.serviceimpl.MusicServiceImpl" name="musicService" type="com.swift.example.service.MusicService"/>
 	<package name="music" extends="struts-default" namespace="/music">
         <action name="addMusic" class="com.swift.example.action.MusicAction" method="addMusic">
 		    <result name="success" type="redirect">listMusic.html</result>

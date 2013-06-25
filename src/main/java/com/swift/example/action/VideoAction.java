@@ -11,9 +11,9 @@ import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.inject.Inject;
 import com.swift.example.model.Video;
 import com.swift.example.service.VideoService;
-import com.swift.example.serviceimpl.VideoServiceImpl;
 
 public class VideoAction extends ActionSupport implements ModelDriven<Video>{
 	
@@ -23,7 +23,8 @@ public class VideoAction extends ActionSupport implements ModelDriven<Video>{
 	
 	private List<Video> videoList = new ArrayList<Video>();
 	private Video video = new Video();
-	private VideoService videoService = new VideoServiceImpl();
+	@Inject("videoService")
+	private VideoService videoService;
 	
 	public String addVideo() {
 		log.info("Inside Add Video....");

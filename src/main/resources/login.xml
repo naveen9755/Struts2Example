@@ -4,6 +4,7 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
  
 <struts>
+    <bean class="com.swift.example.serviceimpl.UserServiceImpl" name="users" type="com.swift.example.service.UserService"/>
 	<package name="login" extends="struts-default">
 	    <action name="login" class="com.swift.example.action.LoginAction">
 	        <result name="success" type="redirect">/index.html</result>

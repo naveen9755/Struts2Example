@@ -4,15 +4,16 @@ import org.apache.commons.lang.StringUtils;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.inject.Inject;
 import com.swift.example.model.User;
 import com.swift.example.service.UserService;
-import com.swift.example.serviceimpl.UserServiceImpl;
 
 public class LoginAction extends ActionSupport implements ModelDriven<User>{
 	
 	private static final long serialVersionUID = 1L;
 	private User user = new User();
-	private UserService userService = new UserServiceImpl();
+	@Inject("users")
+	private UserService userService;
 	
 	public void validate() {
 		if(StringUtils.isEmpty(user.getUsername())) {

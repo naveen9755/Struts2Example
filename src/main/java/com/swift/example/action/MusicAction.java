@@ -12,9 +12,9 @@ import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.inject.Inject;
 import com.swift.example.model.Music;
 import com.swift.example.service.MusicService;
-import com.swift.example.serviceimpl.MusicServiceImpl;
 
 public class MusicAction extends ActionSupport implements ModelDriven<Music>{
 
@@ -24,7 +24,8 @@ public class MusicAction extends ActionSupport implements ModelDriven<Music>{
 	
 	private Music music = new Music();
 	private List<Music> musicList = new ArrayList<Music>();
-	private MusicService musicService = new MusicServiceImpl();
+	@Inject("musicService")
+	private MusicService musicService;
 	
 	public String addMusic() {
 		log.info("Music Data: ");

@@ -4,6 +4,7 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
  
 <struts>
+    <bean class="com.swift.example.serviceimpl.VideoServiceImpl" name="videoService" type="com.swift.example.service.VideoService"/>
 	<package name="video" extends="struts-default" namespace="/video">
         <action name="addVideo" class="com.swift.example.action.VideoAction" method="addVideo">
 		    <result name="success" type="redirect">listVideo.html</result>
