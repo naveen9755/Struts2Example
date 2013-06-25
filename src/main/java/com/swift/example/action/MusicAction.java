@@ -55,6 +55,7 @@ public class MusicAction extends ActionSupport implements ModelDriven<Music>{
 	}
 	
 	public String listMusic() {
+		log.info("Size of Music: " + musicService.listMusic().size());
 		musicList = musicService.listMusic();
 		return SUCCESS;
 	}

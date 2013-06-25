@@ -6,6 +6,10 @@
 <struts>
     <constant name="struts.action.extension" value="html"/> 
     <constant name="struts.devMode" value="true" />
+    
+    <!-- Dependency Injection of CrudService -->
+    <bean class="com.swift.example.serviceimpl.CrudServiceImpl" name="crud" type="com.swift.example.service.CrudService"/>
+    
     <!-- Included the separate login.xml, music.xml and video.xml files for separation of concern. -->
     <include file="login.xml"/>
     <include file="music.xml"/>
