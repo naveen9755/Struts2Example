@@ -6,10 +6,15 @@
 <struts>
     <bean class="com.swift.example.serviceimpl.UserServiceImpl" name="users" type="com.swift.example.service.UserService"/>
 	<package name="login" extends="struts-default">
-	    <action name="login" class="com.swift.example.action.LoginAction">
+	    <action name="login" class="com.swift.example.action.LoginAction" method="login">
 	        <result name="success" type="redirect">/index.html</result>
 	        <result name="login">/login.jsp</result>
 	        <result name="input">/login.jsp</result>
 	    </action>
+	    
+	    <action name="logout" class="com.swift.example.action.LoginAction" method="logout">
+	        <result name="success" type="redirect">/</result>
+	    </action>
+	    
 	</package>
 </struts>

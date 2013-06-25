@@ -9,19 +9,22 @@
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.css">
 </head>
 <body>
-	<div class="container">
+	<s:if test="#session.loggedInUser == null">
+		<% response.sendRedirect(request.getContextPath()); %>
+	</s:if>
+	<s:div cssClass="container">
 		<h1>Videos</h1>
 		<a href='<s:url namespace="/" action="index"/>'>Home</a> ||
-		<a href="<%=request.getContextPath()%>">Logout</a>
+		<a href='<s:url namespace="/" action="logout"/>'>Logout</a>
 	   	<hr/>
 	   	<s:form action="addVideo">
 			<s:push value="video">
 				<s:hidden name="id"/>
-				<s:textfield name="name" cssClass="input-block-level" placeholder="Name of Video"/>
-				<s:textfield name="actor" cssClass="input-block-level" placeholder="Actor"/>
-				<s:textfield name="director" cssClass="input-block-level" placeholder="Director"/>
-				<s:textfield name="writer" cssClass="input-block-level" placeholder="Writer"/>
-				<s:textfield name="category" cssClass="input-block-level" placeholder="Category"/>
+				<s:textfield name="name" cssClass="input-block-level" placeholder="Name of Video" required="true"/>
+				<s:textfield name="actor" cssClass="input-block-level" placeholder="Actor" required="true"/>
+				<s:textfield name="director" cssClass="input-block-level" placeholder="Director" required="true"/>
+				<s:textfield name="writer" cssClass="input-block-level" placeholder="Writer" required="true"/>
+				<s:textfield name="category" cssClass="input-block-level" placeholder="Category" required="true"/>
 				<s:submit value="Submit" cssClass="btn btn-primary"/>
 			</s:push>
    		</s:form>
@@ -66,6 +69,6 @@
 	   	</s:iterator>
 	   	</table>
 	   	</s:if>
-   	</div>
+   	</s:div>
 </body>
 </html>

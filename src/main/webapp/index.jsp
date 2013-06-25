@@ -9,12 +9,15 @@
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.css">
 </head>
 <body>
-	<div class="container">
+	<s:if test="#session.loggedInUser == null">
+		<% response.sendRedirect(request.getContextPath()); %>
+	</s:if>
+	<s:div cssClass="container">
 		<h1>Music and Videos Library</h1>
-		<a href="<s:url namespace="music" action="listMusic"/>">Music</a> ||
-		<a href="<s:url namespace="video" action="listVideo"/>">Videos</a> ||
-		<a href="<%=request.getContextPath()%>">Logout</a>
+		<a href='<s:url namespace="music" action="listMusic"/>'>Music</a> ||
+		<a href='<s:url namespace="video" action="listVideo"/>'>Videos</a> ||
+		<a href='<s:url namespace="/" action="logout"/>'>Logout</a>
 		<hr/>
-	</div>
+	</s:div>
 </body>
 </html>

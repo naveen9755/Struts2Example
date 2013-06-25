@@ -42,13 +42,16 @@
     </style>
 </head>
 <body>
-	<div class="container">
+	<s:if test="#session.loggedInUser != null">
+		<% response.sendRedirect(request.getContextPath() + "/index.html"); %>
+	</s:if>
+	<s:div cssClass="container">
 		<s:form action="login">
 			<h2 class="form-signin-heading">Login</h2>
-			<s:textfield name="username" cssClass="input-block-level" placeholder="Username"/>
-			<s:password name="password" cssClass="input-block-level" placeholder="Password"/>
+			<s:textfield name="username" cssClass="input-block-level" placeholder="Username" required="true"/>
+			<s:password name="password" cssClass="input-block-level" placeholder="Password" required="true"/>
 			<s:submit value="Login" cssClass="btn btn-large btn-primary"/>
 		</s:form>
-	</div>
+	</s:div>
 </body>
 </html>
