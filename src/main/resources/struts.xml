@@ -14,6 +14,7 @@
     <include file="login.xml"/>
     <include file="music.xml"/>
     <include file="video.xml"/>
+    <include file="fileMgmt.xml"/>
 	
 	<!-- Dummy Class Mapping -->
 	<package name="index" extends="struts-default">

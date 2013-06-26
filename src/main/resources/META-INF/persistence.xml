@@ -4,8 +4,9 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<persistence-unit name="PU_STRUTS" transaction-type="RESOURCE_LOCAL">
 	    <provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>com.swift.example.model.Music</class>
 		<class>com.swift.example.model.User</class>
+		<class>com.swift.example.model.Music</class>
+		<class>com.swift.example.model.Video</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/test" />
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
