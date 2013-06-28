@@ -18,13 +18,12 @@ import com.swift.example.service.VideoService;
 public class VideoAction extends ActionSupport implements ModelDriven<Video>{
 	
 	private static final long serialVersionUID = 1L;
-
 	private static final Logger log = Logger.getLogger(VideoAction.class.getName());
 	
-	private List<Video> videoList = new ArrayList<Video>();
-	private Video video = new Video();
 	@Inject("videoService")
 	private VideoService videoService;
+	private List<Video> videoList = new ArrayList<Video>();
+	private Video video = new Video();
 	
 	public String addVideo() {
 		log.info("Inside Add Video....");

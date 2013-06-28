@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <bean class="com.swift.example.serviceimpl.FileMgmtServiceImpl" name="fileMgmt" type="com.swift.example.service.FileMgmtService"/>
+	<package name="fileMgmt" extends="struts-default" namespace="/fileMgmt">
+        <action name="addFile" class="com.swift.example.action.FileMgmtAction" method="addFile">
+            <interceptor-ref name="fileUpload">
+	            <param name="maximumSize">2097152</param>
+	            <param name="allowedTypes">image/png,image/gif,image/jpeg,image/pjpeg</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+		    <result name="success" type="redirect">listFile.html</result>
+	    </action>
+	    
+        <action name="removeFile" class="com.swift.example.action.FileMgmtAction" method="removeFile">
+		    <result name="success" type="redirect">listFile.html</result>
+	    </action>
+	    
+        <action name="listFile" class="com.swift.example.action.FileMgmtAction" method="listFile">
+		    <result name="success">/fileMgmt.jsp</result>
+	    </action>
+	</package>
+</struts>

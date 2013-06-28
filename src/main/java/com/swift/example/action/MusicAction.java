@@ -19,13 +19,12 @@ import com.swift.example.service.MusicService;
 public class MusicAction extends ActionSupport implements ModelDriven<Music>{
 
 	private static final long serialVersionUID = 1L;
-
 	private static final Logger log = Logger.getLogger(MusicAction.class.getName());
 	
-	private Music music = new Music();
-	private List<Music> musicList = new ArrayList<Music>();
 	@Inject("musicService")
 	private MusicService musicService;
+	private Music music = new Music();
+	private List<Music> musicList = new ArrayList<Music>();
 	
 	public String addMusic() {
 		log.info("Music Data: ");

@@ -15,9 +15,10 @@ public class LoginAction extends ActionSupport implements ModelDriven<User>, Ses
 	
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = Logger.getLogger(LoginAction.class.getName());
-	private User user = new User();
+	
 	@Inject("users")
 	private UserService userService;
+	private User user = new User();
 	private Map<String, Object> session;
 	
 	public String login() {
