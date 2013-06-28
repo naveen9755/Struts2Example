@@ -50,6 +50,7 @@
 			<h2 class="form-signin-heading">Login</h2>
 			<s:textfield name="username" cssClass="input-block-level" placeholder="Username" required="true"/>
 			<s:password name="password" cssClass="input-block-level" placeholder="Password" required="true"/>
+			<a href='<s:url namespace="/" action="forgotPassword"/>'>Forgot Password?</a>
 			<s:submit value="Login" cssClass="btn btn-large btn-primary"/>
 		</s:form>
 	</s:div>

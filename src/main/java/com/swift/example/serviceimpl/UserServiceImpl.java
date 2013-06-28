@@ -53,4 +53,13 @@ public class UserServiceImpl implements UserService {
 	public User listUserById(Long userId) {
 		return crudService.findById(User.class, userId);
 	}
+
+	@Override
+	public User getUser(String username) {
+		Query query = crudService.find("Select u from User u where u.username = :username");
+		query.setParameter("username", username);
+		User user = (User) query.getSingleResult();
+		log.info("User: " + user.getUsername());
+		return user;
+	}
 }

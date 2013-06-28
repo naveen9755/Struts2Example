@@ -5,6 +5,7 @@
  
 <struts>
     <bean class="com.swift.example.serviceimpl.UserServiceImpl" name="users" type="com.swift.example.service.UserService"/>
+    <bean class="com.swift.example.mailer.Mailer" name="mailer" />
 	<package name="login" extends="struts-default">
 	    <action name="login" class="com.swift.example.action.LoginAction" method="login">
 	        <result name="success" type="redirect">/index.html</result>
@@ -16,5 +17,13 @@
 	        <result name="success" type="redirect">/</result>
 	    </action>
 	    
+	    <action name="forgotPassword" class="com.swift.example.action.LoginAction" method="forgotPassword">
+	        <result name="success">/forgot_password.jsp</result>
+	    </action>
+	    
+	    <action name="sendPassword" class="com.swift.example.action.LoginAction" method="sendPassword">
+	        <result name="success" type="redirect">/</result>
+	        <result name="error">/forgot_password.jsp</result>
+	    </action>
 	</package>
 </struts>
