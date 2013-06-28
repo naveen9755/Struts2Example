@@ -47,6 +47,7 @@
 			<h2 class="form-signin-heading">Recover Password</h2>
 			<s:textfield name="email" placeholder="Email" required="true" cssClass="input-block-level"/>
 			<s:submit value="Get Password!!!" cssClass="btn btn-primary"/>
+			<table><tr><td><a href='<s:url namespace="/" action="logout"/>'>Back</a></td></tr></table>
 		</s:form>
 	</s:div>
 </body>
