@@ -26,4 +26,22 @@
 	        <result name="error">/forgot_password.jsp</result>
 	    </action>
 	</package>
+	
+	<package name="user" extends="struts-default" namespace="/users">
+	    <action name="addUser" class="com.swift.example.action.UserAction" method="addUser">
+	        <result name="success">/user.jsp</result>
+	    </action>
+	    
+	    <action name="editUser" class="com.swift.example.action.UserAction" method="editUser">
+	        <result name="success">/user.jsp</result>
+	    </action>
+	    
+	    <action name="removeUser" class="com.swift.example.action.UserAction" method="removeUser">
+	        <result name="success">/user.jsp</result>
+	    </action>
+	    
+	    <action name="listUser" class="com.swift.example.action.UserAction" method="listUser">
+	        <result name="success">/user.jsp</result>
+	    </action>
+	</package>
 </struts>

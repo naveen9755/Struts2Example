@@ -16,7 +16,7 @@
 		<h1>Music and Videos Library</h1>
 		<a href='<s:url namespace="music" action="listMusic"/>'>Music</a> ||
 		<a href='<s:url namespace="video" action="listVideo"/>'>Videos</a> ||
-		<a href='<s:url namespace="fileMgmt" action="listFile"/>'>File Mgmt</a> ||
+		<a href='<s:url namespace="fileMgmt" action="listFile"/>'>File Management</a> ||
 		<a href='<s:url namespace="/" action="logout"/>'>Logout</a>
 		<hr/>
 	</s:div>
