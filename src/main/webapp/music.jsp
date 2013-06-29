@@ -17,7 +17,7 @@
 		<a href='<s:url namespace="/" action="index"/>'>Home</a> ||
 		<a href='<s:url namespace="/" action="logout"/>'>Logout</a>
 	   	<hr/>
-		<s:form action="addMusic">
+		<s:form action="addMusic" method="post">
 			<s:push value="music">
 				<s:hidden name="id"/>
 				<s:textfield name="name" cssClass="input-block-level" placeholder="Name of Song" required="true"/>

@@ -35,8 +35,23 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void saveOrUpdateUser(User user) {
-		crudService.create(user);
+	public void addUser(User user) {
+		try {
+			log.info("Inside Add or Update Music Page....");
+			if(user.getId() != null) {
+				User u1 = this.listUserById(user.getId());
+				if(u1 != null) {
+					updateUser(user);
+				}
+			} else {
+				log.info("Album: " + user.getUsername());
+				crudService.create(user);
+			}
+		} catch (Exception ex) {
+            log.info("Inside Persist Exception....");
+            log.info(ex.getMessage());
+            ex.printStackTrace();
+        }
 	}
 
 	@Override
@@ -61,5 +76,19 @@ public class UserServiceImpl implements UserService {
 		User user = (User) query.getSingleResult();
 		log.info("User: " + user.getUsername());
 		return user;
+	}
+
+	@Override
+	public void updateUser(User user) {
+		log.info("inside edit user");
+		try {
+			log.info("Username: " + user.getUsername());
+			crudService.update(user);
+			log.info("User Updated...");
+		} catch(Exception ex) {
+			log.info("Inside Update Exception of Persistence API....");
+			log.info(ex.getMessage());
+			ex.printStackTrace();
+		}
 	}
 }

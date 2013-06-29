@@ -8,7 +8,9 @@ public interface UserService {
 	
 	public boolean verifyUser(User user);
 	
-	public void saveOrUpdateUser(User user);
+	public void addUser(User user);
+	
+	public void updateUser(User user);
 	
 	public void deleteUser(Long userId);
 	

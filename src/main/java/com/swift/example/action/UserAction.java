@@ -1,6 +1,7 @@
 package com.swift.example.action;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +33,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 	}
 	
 	public String addUser() {
+		log.info("Username: " + user.getUsername());
+		log.info("Password: " + user.getPassword());
+		user.setCreated_on(new Date());
+		user.setModified_on(new Date());
+		userService.addUser(user);
 		return SUCCESS;
 	}
 	

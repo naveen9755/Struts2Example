@@ -17,6 +17,7 @@
 		<a href='<s:url namespace="music" action="listMusic"/>'>Music</a> ||
 		<a href='<s:url namespace="video" action="listVideo"/>'>Videos</a> ||
 		<a href='<s:url namespace="fileMgmt" action="listFile"/>'>File Management</a> ||
+		<a href='<s:url namespace="users" action="listUser"/>'>User Management</a> ||
 		<a href='<s:url namespace="/" action="logout"/>'>Logout</a>
 		<hr/>
 	</s:div>
