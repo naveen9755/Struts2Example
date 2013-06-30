@@ -64,13 +64,23 @@ public class LoginAction extends ActionSupport implements ModelDriven<User>, Ses
 			addActionError("User not found with given email address.");
 			return ERROR;
 		}
-		Email email = new Email();
-		email.setTo(this.getEmail());
-		email.setSubject("Forgot Password...");
-		email.setMessage("Your Password: <strong>" + user.getPassword() + "</strong>");
-		mailer.sendMail(email);
-		addActionMessage("Your Password has been sent to your email address now.");
-		return SUCCESS;
+		String remoteAddr = ServletActionContext.getRequest().getRemoteAddr();
+		ReCaptchaImpl reCaptcha = new ReCaptchaImpl();
+		reCaptcha.setPrivateKey("6LfAiuMSAAAAAM3s9whwil_kWlbYywhth3o2P1H7");
+		ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(remoteAddr, recaptcha_challenge_field, recaptcha_response_field);
+		boolean valid = reCaptchaResponse.isValid();
+		if(valid) {
+			Email email = new Email();
+			email.setTo(this.getEmail());
+			email.setSubject("Forgot Password...");
+			email.setMessage("Your Password: <strong>" + user.getPassword() + "</strong>");
+			mailer.sendMail(email);
+			addActionMessage("Your Password has been sent to your email address now.");
+			return SUCCESS;
+		} else {
+			addActionError("Captcha Mismatched! Try Again");
+			return ERROR;
+		}
 	}
 	
 	public String signUp() {

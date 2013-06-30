@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Music and Videos Library</title>
+	<title>Struts 2 Show Case with Twitter Bootstrap</title>
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.css">
 </head>
 <body>
@@ -13,12 +13,14 @@
 		<% response.sendRedirect(request.getContextPath()); %>
 	</s:if>
 	<s:div cssClass="container">
-		<h1>Music and Videos Library</h1>
-		<a href='<s:url namespace="music" action="listMusic"/>'>Music</a> ||
-		<a href='<s:url namespace="video" action="listVideo"/>'>Videos</a> ||
-		<a href='<s:url namespace="fileMgmt" action="listFile"/>'>File Management</a> ||
-		<a href='<s:url namespace="users" action="listUser"/>'>User Management</a> ||
-		<a href='<s:url namespace="/" action="logout"/>'>Logout</a>
+		<h1>Struts 2 Show Case with Twitter Bootstrap</h1>
+		<ul class="nav nav-pills">
+			<li><a href='<s:url namespace="music" action="listMusic"/>'>Music</a></li>
+			<li><a href='<s:url namespace="video" action="listVideo"/>'>Videos</a></li>
+			<li><a href='<s:url namespace="fileMgmt" action="listFile"/>'>File Management</a></li>
+			<li><a href='<s:url namespace="users" action="listUser"/>'>User Management</a></li>
+			<li><a href='<s:url namespace="/" action="logout"/>'>Logout</a></li>
+		</ul>
 		<hr/>
 	</s:div>
 </body>

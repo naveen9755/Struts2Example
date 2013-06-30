@@ -14,8 +14,10 @@
 	</s:if>
 	<s:div cssClass="container">
 		<h1>Videos</h1>
-		<a href='<s:url namespace="/" action="index"/>'>Home</a> ||
-		<a href='<s:url namespace="/" action="logout"/>'>Logout</a>
+		<ul class="nav nav-pills">
+			<li><a href='<s:url namespace="/" action="index"/>'>Home</a></li>
+			<li><a href='<s:url namespace="/" action="logout"/>'>Logout</a></li>
+		</ul>
 	   	<hr/>
 	   	<s:form action="addVideo">
 			<s:push value="video">

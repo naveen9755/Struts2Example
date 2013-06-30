@@ -16,7 +16,18 @@
 	   	<s:actionmessage cssClass="alert alert-success" cssStyle="padding-left: 30px;"/>
 		<s:form action="sendPassword" method="post">
 			<s:textfield name="email" placeholder="Username or Email" required="true" cssClass="input-block-level"/>
-			<s:submit value="Get Password!!!" cssClass="btn btn-primary"/>
+			<table>
+	   		<tr><td>
+	   		<script type="text/javascript" src="http://api.recaptcha.net/challenge?k=6LfAiuMSAAAAACEE13IZiT8F4JDGfWqij8UyP4ep"></script>
+ 			<noscript>
+ 				<iframe src="http://api.recaptcha.net/noscript?k=6LfAiuMSAAAAACEE13IZiT8F4JDGfWqij8UyP4ep" 
+ 					height="300" width="300" frameborder="0"></iframe><br>
+ 				<s:textarea name="recaptcha_challenge_field" rows="3" cols="40"/>
+ 				<s:hidden name="recaptcha_response_field" value="manual_challenge"/>
+ 			</noscript>
+ 			</td></tr>
+ 			</table>
+ 			<table><tr><td><s:submit value="Get Password!!!" cssClass="btn btn-primary"/></td></tr></table>
 			<table><tr><td><a href='<s:url namespace="/" action="logout"/>'>Back</a></td></tr></table>
 		</s:form>
 	</s:div>

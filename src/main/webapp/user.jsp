@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>User Page</title>
+	<title>Users Page</title>
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.css">
 </head>
 <body>
@@ -13,9 +13,11 @@
 		<% response.sendRedirect(request.getContextPath()); %>
 	</s:if>
 	<s:div cssClass="container">
-		<h1>Users</h1>
-		<a href='<s:url namespace="/" action="index"/>'>Home</a> ||
-		<a href='<s:url namespace="/" action="logout"/>'>Logout</a>
+		<h1>User Management</h1>
+		<ul class="nav nav-pills">
+			<li><a href='<s:url namespace="/" action="index"/>'>Home</a></li>
+			<li><a href='<s:url namespace="/" action="logout"/>'>Logout</a></li>
+		</ul>
 	   	<hr/>
 	   	<s:if test="userList.size() > 0">
 	   	<table>
