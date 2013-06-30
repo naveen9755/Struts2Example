@@ -47,6 +47,7 @@
 	</s:if>
 	<s:div cssClass="container">
 		<s:form action="login">
+			<s:actionerror cssClass="alert alert-error" cssStyle="padding-left: 30px;"/>
 			<h2 class="form-signin-heading">Login</h2>
 			<s:textfield name="username" cssClass="input-block-level" placeholder="Username" required="true"/>
 			<s:password name="password" cssClass="input-block-level" placeholder="Password" required="true"/>

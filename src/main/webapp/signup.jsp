@@ -15,9 +15,9 @@
 	   	<s:actionerror cssClass="alert alert-error" cssStyle="padding-left: 30px;"/>
 	   	<s:actionmessage cssClass="alert alert-success" cssStyle="padding-left: 30px;"/>
 	   	<s:form action="registerUser" method="post">
-	   		<s:textfield name="user_name" placeholder="Username should be email" cssClass="input-block-level" required="true"/>
-	   		<s:password name="pass_word" placeholder="Password" cssClass="input-block-level" required="true"/>
-	   		<s:password name="rePassword" placeholder="Retype Password" cssClass="input-block-leve" required="true"/>
+	   		<s:textfield name="user_name" placeholder="Username should be email address" cssClass="input-block-level" required="true" size="45"/>
+	   		<s:password name="pass_word" placeholder="Password" cssClass="input-block-level" required="true" size="45"/>
+	   		<s:password name="rePassword" placeholder="Retype Password" cssClass="input-block-level" required="true" size="45"/>
 	   		<table>
 	   		<tr><td>
 	   		<script type="text/javascript" src="http://api.recaptcha.net/challenge?k=6LfAiuMSAAAAACEE13IZiT8F4JDGfWqij8UyP4ep"></script>

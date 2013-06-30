@@ -43,7 +43,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<User>, Ses
 			this.session.put("loggedInUser", user.getUsername());
 			return SUCCESS;
 		}
-		addFieldError("username", "Invalid Username and Password...");
+		addActionError("Invalid Username or Password...");
 		return LOGIN;
 	}
 	
