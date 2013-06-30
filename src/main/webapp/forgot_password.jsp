@@ -15,7 +15,7 @@
 		<s:actionerror cssClass="alert alert-error" cssStyle="padding-left: 30px;"/>
 	   	<s:actionmessage cssClass="alert alert-success" cssStyle="padding-left: 30px;"/>
 		<s:form action="sendPassword" method="post">
-			<s:textfield name="email" placeholder="Username or Email" required="true" cssClass="input-block-level"/>
+			<s:textfield name="email" placeholder="Username or Email" required="true" cssClass="input-block-level" size="45"/>
 			<table>
 	   		<tr><td>
 	   		<script type="text/javascript" src="http://api.recaptcha.net/challenge?k=6LfAiuMSAAAAACEE13IZiT8F4JDGfWqij8UyP4ep"></script>
