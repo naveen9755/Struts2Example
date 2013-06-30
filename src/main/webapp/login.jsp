@@ -51,7 +51,14 @@
 			<s:textfield name="username" cssClass="input-block-level" placeholder="Username" required="true"/>
 			<s:password name="password" cssClass="input-block-level" placeholder="Password" required="true"/>
 			<s:submit value="Login" cssClass="btn btn-large btn-primary"/>
-			<table><tr><td><a href='<s:url namespace="/" action="forgotPassword"/>'>Forgot Password?</a></td></tr></table>
+			<table>
+				<tr>
+					<td><a href='<s:url namespace="/" action="forgotPassword"/>'>Forgot Password?</a></td>
+				</tr>
+				<tr>
+					<td><a href='<s:url namespace="/" action="signUp"/>'>Sign Up</a></td>
+				</tr>
+			</table>
 		</s:form>
 	</s:div>
 </body>
