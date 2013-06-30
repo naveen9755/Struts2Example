@@ -13,12 +13,7 @@
 		<% response.sendRedirect(request.getContextPath()); %>
 	</s:if>
 	<s:div cssClass="container">
-		<h1>File Management</h1>
-		<ul class="nav nav-pills">
-			<li><a href='<s:url namespace="/" action="index"/>'>Home</a></li>
-			<li><a href='<s:url namespace="/" action="logout"/>'>Logout</a></li>
-	   	</ul>
-	   	<hr/>
+		<s:include value="header.jsp"/>
 		<s:form action="addFile" method="post" enctype="multipart/form-data">
 			<s:hidden name="id"/>
 			<s:file name="userImage" required="true"/>

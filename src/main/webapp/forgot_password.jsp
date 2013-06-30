@@ -28,8 +28,8 @@
  			</td></tr>
  			</table>
  			<table><tr><td><s:submit value="Get Password!!!" cssClass="btn btn-primary"/></td></tr></table>
-			<table><tr><td><a href='<s:url namespace="/" action="logout"/>'>Back</a></td></tr></table>
 		</s:form>
+		<table><tr><td><a href='<s:url namespace="/" action="logout"/>'>Back</a></td></tr></table>
 	</s:div>
 </body>
 </html>

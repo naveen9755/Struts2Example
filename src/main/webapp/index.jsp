@@ -13,15 +13,8 @@
 		<% response.sendRedirect(request.getContextPath()); %>
 	</s:if>
 	<s:div cssClass="container">
-		<h1>Struts 2 Show Case with Twitter Bootstrap</h1>
-		<ul class="nav nav-pills">
-			<li><a href='<s:url namespace="music" action="listMusic"/>'>Music</a></li>
-			<li><a href='<s:url namespace="video" action="listVideo"/>'>Videos</a></li>
-			<li><a href='<s:url namespace="fileMgmt" action="listFile"/>'>File Management</a></li>
-			<li><a href='<s:url namespace="users" action="listUser"/>'>User Management</a></li>
-			<li><a href='<s:url namespace="/" action="logout"/>'>Logout</a></li>
-		</ul>
-		<hr/>
+		<s:include value="header.jsp"/>
 	</s:div>
+	
 </body>
 </html>

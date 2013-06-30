@@ -13,12 +13,7 @@
 		<% response.sendRedirect(request.getContextPath()); %>
 	</s:if>
 	<s:div cssClass="container">
-		<h1>Music</h1>
-		<ul class="nav nav-pills">
-			<li><a href='<s:url namespace="/" action="index"/>'>Home</a></li>
-			<li><a href='<s:url namespace="/" action="logout"/>'>Logout</a></li>
-		</ul>
-		<hr/>
+		<s:include value="header.jsp"/>
 		<s:form action="addMusic" method="post">
 			<s:push value="music">
 				<s:hidden name="id"/>
