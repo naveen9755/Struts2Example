@@ -46,7 +46,7 @@ public class VideoAction extends ActionSupport implements ModelDriven<Video>{
 	}
 	
 	public String listVideo() {
-		log.info("Size of Video: " + videoService.listVideo().size());
+		log.info("Number of Videos: " + videoService.listVideo().size());
 		videoList = videoService.listVideo();
 		return SUCCESS;
 	}

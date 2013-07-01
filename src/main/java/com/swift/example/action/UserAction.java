@@ -67,4 +67,5 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 	public void setUserList(List<User> userList) {
 		this.userList = userList;
 	}
+	
 }
