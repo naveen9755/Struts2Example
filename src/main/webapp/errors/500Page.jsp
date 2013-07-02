@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Error</title>
+<title>500 Internal Server Error</title>
 </head>
 <body>
-	<h1>Error here!!!</h1>
+	<h1>500 Page!</h1>
 </body>
 </html>

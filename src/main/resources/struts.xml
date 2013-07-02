@@ -23,4 +23,5 @@
 	        <result>/index.jsp</result>
 	    </action>
 	</package>
+	
 </struts>

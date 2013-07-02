@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Sign Up</title>
+	<title>Sign Up::Struts 2 Show Case</title>
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.css">
 </head>
 <body>
