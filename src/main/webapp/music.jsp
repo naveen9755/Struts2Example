@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="d" uri="http://displaytag.sf.net" %>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -65,6 +66,19 @@
 	   		</tr>
 	   	</s:iterator>
 	   	</table>
+	   	<p><br/><br/>
+	   	<d:table name="musicList" pagesize="5" requestURI="listMusic.html" export="true">
+	   		<d:column property="name" title="Name of Song" sortable="true"/>
+	   		<d:column property="singer" title="Singer" sortable="true"/>
+	   		<d:column property="album" title="Album" sortable="true"/>
+	   		<d:column property="composer" title="Composer" sortable="true"/>
+	   		<d:column property="lyricist" title="Lyricist" sortable="true"/>
+	   		<d:setProperty name="export.excel.filename" value="MusicList.xls"/>
+            <d:setProperty name="export.pdf.filename" value="MusicList.pdf"/>
+            <d:setProperty name="export.rtf.filename" value="MusicList.rtf"/>
+            <d:setProperty name="export.csv.filename" value="MusicList.csv"/>
+            <d:setProperty name="export.xml.filename" value="MusicList.xml"/>
+	   	</d:table>
 	   	</s:if>
    </s:div>
 </body>
