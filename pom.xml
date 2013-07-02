@@ -73,12 +73,6 @@
             <artifactId>commons-codec</artifactId>
             <version>1.6</version>
         </dependency>
-
-		<!-- <dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.1.1</version>
-		</dependency> -->
 		
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -120,6 +114,12 @@
 		    <groupId>org.slf4j</groupId>
 		    <artifactId>slf4j-api</artifactId>
 		    <version>1.4.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.jgeppert.struts2.jquery</groupId>
+			<artifactId>struts2-jquery-plugin</artifactId>
+			<version>3.5.1</version>
 		</dependency>
 	</dependencies>
 	<build>

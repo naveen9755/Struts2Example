@@ -12,11 +12,11 @@
 	            <param name="allowedTypes">image/png,image/gif,image/jpeg,image/pjpeg</param>
             </interceptor-ref>
             <interceptor-ref name="defaultStack"></interceptor-ref>
-		    <result name="success" type="redirect">listFile.html</result>
+		    <result name="success" type="redirect">listFile.php</result>
 	    </action>
 	    
         <action name="removeFile" class="com.swift.example.action.FileMgmtAction" method="removeFile">
-		    <result name="success" type="redirect">listFile.html</result>
+		    <result name="success" type="redirect">listFile.php</result>
 	    </action>
 	    
         <action name="listFile" class="com.swift.example.action.FileMgmtAction" method="listFile">

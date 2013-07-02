@@ -4,7 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
  
 <struts>
-    <constant name="struts.action.extension" value="html"/> 
+    <constant name="struts.action.extension" value="php"/> 
     <constant name="struts.devMode" value="true" />
     
     <!-- Dependency Injection of CrudService -->
@@ -16,6 +16,7 @@
     <include file="music.xml"/>
     <include file="video.xml"/>
     <include file="fileMgmt.xml"/>
+    <include file="ajax_page.xml"/>
 	
 	<!-- Dummy Class Mapping -->
 	<package name="index" extends="struts-default">

@@ -10,7 +10,7 @@
 	    </action>
 	    
 	    <action name="removeUser" class="com.swift.example.action.UserAction" method="removeUser">
-	        <result name="success" type="redirect">listUser.html</result>
+	        <result name="success" type="redirect">listUser.php</result>
 	    </action>
 	    
 	    <action name="listUser" class="com.swift.example.action.UserAction" method="listUser">
