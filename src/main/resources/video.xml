@@ -11,7 +11,7 @@
 	    </action>
 	    
         <action name="editVideo" class="com.swift.example.action.VideoAction" method="editVideo">
-		    <result name="success">/video.jsp</result>
+		    <result name="success">/videos/video.jsp</result>
 	    </action>
 	    
         <action name="removeVideo" class="com.swift.example.action.VideoAction" method="removeVideo">
@@ -19,7 +19,7 @@
 	    </action>
 	    
         <action name="listVideo" class="com.swift.example.action.VideoAction" method="listVideo">
-		    <result name="success">/video.jsp</result>
+		    <result name="success">/videos/video.jsp</result>
 	    </action>
 	</package>
 </struts>

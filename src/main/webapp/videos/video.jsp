@@ -13,7 +13,7 @@
 		<% response.sendRedirect(request.getContextPath()); %>
 	</s:if>
 	<s:div cssClass="container">
-		<s:include value="header.jsp"/>
+		<s:include value="../template/header.jsp"/>
 	   	<s:form action="addVideo">
 			<s:push value="video">
 				<s:hidden name="id"/>

@@ -13,7 +13,7 @@
 		<% response.sendRedirect(request.getContextPath()); %>
 	</s:if>
 	<s:div cssClass="container">
-		<s:include value="header.jsp"/>
+		<s:include value="../template/header.jsp"/>
 	   	<s:if test="userList.size() > 0">
 	   	<table>
 	   	<tr>

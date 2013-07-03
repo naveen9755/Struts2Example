@@ -15,19 +15,13 @@
 		<% response.sendRedirect(request.getContextPath()); %>
 	</s:if>
 	<s:div cssClass="container">
-		<s:include value="header.jsp"/>
+		<s:include value="../template/header.jsp"/>
 		<s:form id="form" action="resultPage">
 			 <s:textfield name="name"/>
-			 <sj:submit 
-	            	id="formSubmit"
-	            	targets="formResult" 
-	            	value="AJAX Submit" 
-	            	indicator="indicator"
-	            	button="true"
-	            	effect="highlight"
-	            	/>
+			 <sj:submit id="formSubmit" targets="formResult" value="AJAX Submit" 
+	            	indicator="indicator" button="true" effect="highlight"/>
 		</s:form>
-		<h3>AJAX Result</h3>
+		<h3>AJAX Result using jQuery</h3>
 		<div id="formResult"></div>
 	</s:div>
 </body>

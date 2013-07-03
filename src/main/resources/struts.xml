@@ -21,7 +21,7 @@
 	<!-- Dummy Class Mapping -->
 	<package name="index" extends="struts-default">
 	    <action name="index">
-	        <result>/index.jsp</result>
+	        <result>/template/index.jsp</result>
 	    </action>
 	</package>
 	

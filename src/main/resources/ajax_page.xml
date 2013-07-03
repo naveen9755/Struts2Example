@@ -7,11 +7,11 @@
     
 	<package name="ajax" extends="struts-default" namespace="/ajax">
 	    <action name="index" class="com.swift.example.action.AjaxAction" method="index">
-	        <result name="success">/ajax_page.jsp</result>
+	        <result name="success">/ajax/ajax_page.jsp</result>
 	    </action>
 	    
 	    <action name="resultPage" class="com.swift.example.action.AjaxAction" method="resultPage">
-	        <result name="success">/ajax_result.jsp</result>
+	        <result name="success">/ajax/ajax_result.jsp</result>
 	    </action>
 	</package>
 	

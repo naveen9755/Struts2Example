@@ -9,8 +9,8 @@
 	<package name="login" extends="struts-default">
 	    <action name="login" class="com.swift.example.action.LoginAction" method="login">
 	        <result name="success" type="redirect">/index.php</result>
-	        <result name="login">/login.jsp</result>
-	        <result name="input">/login.jsp</result>
+	        <result name="login">/authentication/login.jsp</result>
+	        <result name="input">/authentication/login.jsp</result>
 	    </action>
 	    
 	    <action name="logout" class="com.swift.example.action.LoginAction" method="logout">
@@ -18,21 +18,21 @@
 	    </action>
 	    
 	    <action name="forgotPassword" class="com.swift.example.action.LoginAction" method="forgotPassword">
-	        <result name="success">/forgot_password.jsp</result>
+	        <result name="success">/authentication/forgot_password.jsp</result>
 	    </action>
 	    
 	    <action name="sendPassword" class="com.swift.example.action.LoginAction" method="sendPassword">
-	        <result name="success">/forgot_password.jsp</result>
-	        <result name="error">/forgot_password.jsp</result>
+	        <result name="success">/authentication/forgot_password.jsp</result>
+	        <result name="error">/authentication/forgot_password.jsp</result>
 	    </action>
 	    
 	    <action name="signUp" class="com.swift.example.action.LoginAction" method="signUp">
-	        <result name="success">/signup.jsp</result>
+	        <result name="success">/authentication/signup.jsp</result>
 	    </action>
 	    
 	    <action name="registerUser" class="com.swift.example.action.LoginAction" method="registerUser">
-	        <result name="success">/signup.jsp</result>
-	        <result name="error">/signup.jsp</result>
+	        <result name="success">/authentication/signup.jsp</result>
+	        <result name="error">/authentication/signup.jsp</result>
 	    </action>
 	</package>
 </struts>

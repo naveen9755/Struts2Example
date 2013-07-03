@@ -20,7 +20,7 @@
 	    </action>
 	    
         <action name="listFile" class="com.swift.example.action.FileMgmtAction" method="listFile">
-		    <result name="success">/fileMgmt.jsp</result>
+		    <result name="success">/file_mgmt/fileMgmt.jsp</result>
 	    </action>
 	</package>
 </struts>
