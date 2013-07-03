@@ -31,7 +31,7 @@
 	   				<td style="background: #AAAAAA"><s:property value="created_on"/></td>
 	   			</s:if>
 	   			<td>
-	   				<s:url id="deleteURL" namespace="/user" action="removeUser">
+	   				<s:url id="deleteURL" namespace="/users" action="removeUser">
 	   					<s:param name="id" value="%{id}"></s:param>
 	   				</s:url>
 	   				<s:a href="%{deleteURL}">Delete</s:a>
