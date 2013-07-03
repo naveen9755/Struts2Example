@@ -16,22 +16,20 @@
 	</s:if>
 	<s:div cssClass="container">
 		<s:include value="header.jsp"/>
-		<s:form action="index" method="post">
+		<s:form id="form" action="resultPage">
 			 <s:textfield name="name"/>
 			 <sj:submit 
-                	targets="result" 
-                	effect="slide" 
-                	effectMode="blind"
-                	onEffectCompleteTopics="hideTarget"
-                	value="AJAX Submit" 
-                	indicator="indicator" 
-                	button="true"
-                />
+	            	id="formSubmit1"
+	            	targets="formResult" 
+	            	value="AJAX Submit" 
+	            	indicator="indicator"
+	            	button="true"
+	            	/>
 		</s:form>
 		<h3>AJAX Result</h3>
-		<s:div id="result">
-			<s:property value="name"/>
-		</s:div>
+		<div id="formResult">
+			
+		</div>
 	</s:div>
 </body>
 </html>
