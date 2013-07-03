@@ -1,5 +1,7 @@
 package com.swift.example.action;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AjaxAction extends ActionSupport{
@@ -20,6 +22,10 @@ public class AjaxAction extends ActionSupport{
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		if(StringUtils.isBlank(name)) {
+			this.name = "No Contents to Show :(";
+		} else {
+			this.name = name;
+		}
 	}
 }

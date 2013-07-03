@@ -19,17 +19,16 @@
 		<s:form id="form" action="resultPage">
 			 <s:textfield name="name"/>
 			 <sj:submit 
-	            	id="formSubmit1"
+	            	id="formSubmit"
 	            	targets="formResult" 
 	            	value="AJAX Submit" 
 	            	indicator="indicator"
 	            	button="true"
+	            	effect="highlight"
 	            	/>
 		</s:form>
 		<h3>AJAX Result</h3>
-		<div id="formResult">
-			
-		</div>
+		<div id="formResult"></div>
 	</s:div>
 </body>
 </html>
