@@ -13,4 +13,7 @@ public interface VideoService {
 	public void removeVideo(Long id);
 	
 	public Video getVideo(Long id);
+	
+	@SuppressWarnings("rawtypes")
+	public List listVideoNames();
 }

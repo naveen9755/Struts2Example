@@ -9,7 +9,7 @@ import javax.persistence.Persistence;
 
 import com.swift.example.service.CrudService;
 
-public class CrudServiceImpl implements CrudService{
+public class CrudServiceImpl implements CrudService {
 	
 	private static final Logger log = Logger.getLogger(CrudServiceImpl.class.getName());
 	private EntityManagerFactory emf;
@@ -87,6 +87,12 @@ public class CrudServiceImpl implements CrudService{
 	@Override
 	public <T> T find(String query) {
 		return (T) this.em.createQuery(query);
+	}
+
+	@SuppressWarnings("rawtypes")
+	@Override
+	public <T> List findUsingSP(String query) {
+		return this.em.createNamedQuery(query).getResultList();
 	}
 
 }

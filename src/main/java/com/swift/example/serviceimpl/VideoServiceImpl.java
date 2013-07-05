@@ -57,4 +57,10 @@ public class VideoServiceImpl implements VideoService {
 	public Video getVideo(Long id) {
 		return crudService.findById(Video.class, id);
 	}
+
+	@SuppressWarnings("rawtypes")
+	@Override
+	public List listVideoNames() {
+		return crudService.findUsingSP("callVideoStoreProcedure");
+	}
 }

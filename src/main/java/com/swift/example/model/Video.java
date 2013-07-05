@@ -6,8 +6,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
 
+@NamedNativeQueries({
+	@NamedNativeQuery(
+	name = "callVideoStoreProcedure",
+	query = "select list_all_singer_names()",
+	resultClass = Video.class
+	)
+})
 @Entity
 @Table(name = "Video")
 public class Video {

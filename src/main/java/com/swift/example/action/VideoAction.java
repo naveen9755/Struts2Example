@@ -71,5 +71,4 @@ public class VideoAction extends ActionSupport implements ModelDriven<Video>{
 	public void setVideoList(List<Video> videoList) {
 		this.videoList = videoList;
 	}
-
 }

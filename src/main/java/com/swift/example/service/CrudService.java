@@ -15,4 +15,7 @@ public interface CrudService {
 	public <T> List<T> findAll(String query);
 	
 	public <T> T find(String query);
+	
+	@SuppressWarnings("rawtypes")
+	public <T> List findUsingSP(String query);
 }
