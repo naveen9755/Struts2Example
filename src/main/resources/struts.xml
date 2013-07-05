@@ -4,8 +4,15 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
  
 <struts>
-    <constant name="struts.action.extension" value="php"/> 
+    <constant name="struts.action.extension" value="php,xml,json"/> 
     <constant name="struts.devMode" value="true" />
+	<constant name="struts.mapper.class" value="org.apache.struts2.dispatcher.mapper.PrefixBasedActionMapper" />
+  	<constant name="struts.mapper.prefixMapping" value="/rest:rest,:struts"/>
+  	
+  	<constant name="struts.convention.action.suffix" value="Controller"/>
+	<constant name="struts.convention.action.mapAllMatches" value="true"/>
+	<constant name="struts.convention.default.parent.package" value="rest-default"/>
+	<constant name="struts.convention.package.locators" value="example"/>
     
     <!-- Dependency Injection of CrudService -->
     <bean class="com.swift.example.serviceimpl.CrudServiceImpl" name="crud" type="com.swift.example.service.CrudService"/>
