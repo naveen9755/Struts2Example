@@ -3,7 +3,7 @@ Struts 2 Simple Show Case
 
 Struts 2 Show Case Example
 
-# Basic CRUD Operation.
+* Basic CRUD Operation.
 # Session Management.
 # File Upload/Download.
 # Captcha Implementation.
