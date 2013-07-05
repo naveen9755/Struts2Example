@@ -22,7 +22,7 @@ public class Music {
 
 	@Id
 	@GeneratedValue
-	@Column(name="MUSIC_ID")
+	@Column(name = "MUSIC_ID")
 	public Long getId() {
 		return id;
 	}
@@ -31,7 +31,7 @@ public class Music {
 		this.id = id;
 	}
 
-	@Column(name="NAME")
+	@Column(name = "NAME")
 	public String getName() {
 		return name;
 	}
@@ -40,7 +40,7 @@ public class Music {
 		this.name = name;
 	}
 
-	@Column(name="SINGER")
+	@Column(name = "SINGER")
 	public String getSinger() {
 		return singer;
 	}
@@ -49,7 +49,7 @@ public class Music {
 		this.singer = singer;
 	}
 
-	@Column(name="ALBUM")
+	@Column(name = "ALBUM")
 	public String getAlbum() {
 		return album;
 	}
@@ -58,7 +58,7 @@ public class Music {
 		this.album = album;
 	}
 
-	@Column(name="COMPOSER")
+	@Column(name = "COMPOSER")
 	public String getComposer() {
 		return composer;
 	}
@@ -67,7 +67,7 @@ public class Music {
 		this.composer = composer;
 	}
 
-	@Column(name="LYRICIST")
+	@Column(name = "LYRICIST")
 	public String getLyricist() {
 		return lyricist;
 	}
@@ -76,7 +76,7 @@ public class Music {
 		this.lyricist = lyricist;
 	}
 
-	@Column(name="CREATED_ON")
+	@Column(name = "CREATED_ON")
 	public Date getCreateOn() {
 		return createOn;
 	}
@@ -84,5 +84,5 @@ public class Music {
 	public void setCreateOn(Date createOn) {
 		this.createOn = createOn;
 	}
-	
+
 }

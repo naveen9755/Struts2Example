@@ -5,15 +5,13 @@ import java.util.List;
 import com.swift.example.model.Video;
 
 public interface VideoService {
-	
+
 	public void addVideo(Video video);
-	
+
 	public List<Video> listVideo();
-	
+
 	public void removeVideo(Long id);
-	
+
 	public Video getVideo(Long id);
-	
-	@SuppressWarnings("rawtypes")
-	public List listVideoNames();
+
 }

@@ -16,16 +16,17 @@ import com.opensymphony.xwork2.inject.Inject;
 import com.swift.example.model.Music;
 import com.swift.example.service.MusicService;
 
-public class MusicAction extends ActionSupport implements ModelDriven<Music>{
+public class MusicAction extends ActionSupport implements ModelDriven<Music> {
 
 	private static final long serialVersionUID = 1L;
-	private static final Logger log = Logger.getLogger(MusicAction.class.getName());
-	
+	private static final Logger log = Logger.getLogger(MusicAction.class
+			.getName());
+
 	@Inject("musicService")
 	private MusicService musicService;
 	private Music music = new Music();
 	private List<Music> musicList = new ArrayList<Music>();
-	
+
 	public String addMusic() {
 		log.info("Music Data: ");
 		log.info("Name: " + music.getName());
@@ -37,22 +38,25 @@ public class MusicAction extends ActionSupport implements ModelDriven<Music>{
 		musicService.addMusic(music);
 		return SUCCESS;
 	}
-	
+
 	public String editMusic() {
-		HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+		HttpServletRequest request = (HttpServletRequest) ActionContext
+				.getContext().get(ServletActionContext.HTTP_REQUEST);
 		log.info("Music ID: " + request.getParameter("id"));
-		music = musicService.listMusicById(Long.parseLong(request.getParameter("id")));
+		music = musicService.listMusicById(Long.parseLong(request
+				.getParameter("id")));
 		return SUCCESS;
 	}
-	
+
 	public String removeMusic() {
 		log.info("Remove Music...");
-		HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+		HttpServletRequest request = (HttpServletRequest) ActionContext
+				.getContext().get(ServletActionContext.HTTP_REQUEST);
 		log.info("Music ID: " + request.getParameter("id"));
 		musicService.removeMusic(Long.parseLong(request.getParameter("id")));
 		return SUCCESS;
 	}
-	
+
 	public String listMusic() {
 		log.info("Size of Music: " + musicService.listMusic().size());
 		musicList = musicService.listMusic();
@@ -63,7 +67,7 @@ public class MusicAction extends ActionSupport implements ModelDriven<Music>{
 	public Music getModel() {
 		return music;
 	}
-	
+
 	public Music getMusic() {
 		return music;
 	}

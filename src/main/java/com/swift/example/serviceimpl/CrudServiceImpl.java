@@ -92,7 +92,7 @@ public class CrudServiceImpl implements CrudService {
 	@SuppressWarnings("rawtypes")
 	@Override
 	public <T> List findUsingSP(String query) {
-		return this.em.createNamedQuery(query).getResultList();
+		return this.em.createNativeQuery(query).getResultList();
 	}
 
 }

@@ -10,18 +10,19 @@ import com.swift.example.service.MusicService;
 
 public class MusicServiceImpl implements MusicService {
 
-	private static final Logger log = Logger.getLogger(MusicServiceImpl.class.getName());
-	
+	private static final Logger log = Logger.getLogger(MusicServiceImpl.class
+			.getName());
+
 	@Inject("crud")
 	private CrudService crudService;
-	
+
 	@Override
 	public void addMusic(Music music) throws SecurityException {
 		try {
 			log.info("Inside Add or Update Music Page....");
-			if(music.getId() != null) {
+			if (music.getId() != null) {
 				Music m1 = this.listMusicById(music.getId());
-				if(m1 != null) {
+				if (m1 != null) {
 					updateMusic(music);
 				}
 			} else {
@@ -29,10 +30,10 @@ public class MusicServiceImpl implements MusicService {
 				crudService.create(music);
 			}
 		} catch (Exception ex) {
-            log.info("Inside Persist Exception....");
-            log.info(ex.getMessage());
-            ex.printStackTrace();
-        }
+			log.info("Inside Persist Exception....");
+			log.info(ex.getMessage());
+			ex.printStackTrace();
+		}
 	}
 
 	@Override
@@ -58,7 +59,7 @@ public class MusicServiceImpl implements MusicService {
 			log.info("Music Singer: " + music.getSinger());
 			crudService.update(music);
 			log.info("Music Updated...");
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			log.info("Inside Update Exception of Persistence API....");
 			log.info(ex.getMessage());
 			ex.printStackTrace();
@@ -69,4 +70,5 @@ public class MusicServiceImpl implements MusicService {
 	public Music listMusicById(Long id) {
 		return crudService.findById(Music.class, id);
 	}
+
 }

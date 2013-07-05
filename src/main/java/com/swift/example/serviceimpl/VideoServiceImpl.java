@@ -11,19 +11,20 @@ import com.swift.example.service.VideoService;
 
 public class VideoServiceImpl implements VideoService {
 
-	private static final Logger log = Logger.getLogger(VideoServiceImpl.class.getName());
+	private static final Logger log = Logger.getLogger(VideoServiceImpl.class
+			.getName());
 
 	@Inject("crud")
 	private CrudService crudService;
-	
+
 	@Override
 	public void addVideo(Video video) {
 		log.info("Adding Videos...");
 		log.info("Inside Add or Update Music Page....");
 		try {
-			if(video.getId() != null) {
+			if (video.getId() != null) {
 				Video v1 = this.getVideo(video.getId());
-				if(v1 != null) {
+				if (v1 != null) {
 					log.info("Updating the Video....");
 					crudService.update(video);
 				}
@@ -31,7 +32,7 @@ public class VideoServiceImpl implements VideoService {
 				crudService.create(video);
 				log.info("Video Added....");
 			}
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
@@ -56,11 +57,5 @@ public class VideoServiceImpl implements VideoService {
 	@Override
 	public Video getVideo(Long id) {
 		return crudService.findById(Video.class, id);
-	}
-
-	@SuppressWarnings("rawtypes")
-	@Override
-	public List listVideoNames() {
-		return crudService.findUsingSP("callVideoStoreProcedure");
 	}
 }

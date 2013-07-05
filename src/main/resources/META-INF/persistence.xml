@@ -7,6 +7,7 @@
 		<class>com.swift.example.model.User</class>
 		<class>com.swift.example.model.Music</class>
 		<class>com.swift.example.model.Video</class>
+		<class>com.swift.example.model.FileMgmt</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/test" />
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
