@@ -48,7 +48,6 @@ public class UserServiceImpl implements UserService {
 				crudService.create(user);
 			}
 		} catch (Exception ex) {
-            log.info("Inside Persist Exception....");
             log.info(ex.getMessage());
             ex.printStackTrace();
         }
@@ -84,13 +83,12 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void updateUser(User user) {
-		log.info("inside edit user");
+		log.info("Inside Update Section of User...");
 		try {
 			log.info("Username: " + user.getUsername());
 			crudService.update(user);
 			log.info("User Updated...");
 		} catch(Exception ex) {
-			log.info("Inside Update Exception of Persistence API....");
 			log.info(ex.getMessage());
 			ex.printStackTrace();
 		}

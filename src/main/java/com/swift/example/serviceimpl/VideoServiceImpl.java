@@ -19,7 +19,6 @@ public class VideoServiceImpl implements VideoService {
 
 	@Override
 	public void addVideo(Video video) {
-		log.info("Adding Videos...");
 		log.info("Inside Add or Update Music Page....");
 		try {
 			if (video.getId() != null) {
@@ -48,7 +47,6 @@ public class VideoServiceImpl implements VideoService {
 		try {
 			crudService.delete(Video.class, id);
 		} catch (Exception ex) {
-			log.info("Inside Remove Exception of Persistence API....");
 			log.info(ex.getMessage());
 			ex.printStackTrace();
 		}
