@@ -30,7 +30,6 @@ public class MusicServiceImpl implements MusicService {
 				crudService.create(music);
 			}
 		} catch (Exception ex) {
-			log.info("Inside Persist Exception....");
 			log.info(ex.getMessage());
 			ex.printStackTrace();
 		}
@@ -38,7 +37,7 @@ public class MusicServiceImpl implements MusicService {
 
 	@Override
 	public List<Music> listMusic() {
-		return crudService.findAll("from Music");
+		return crudService.findAll(Music.ALL_MUSIC);
 	}
 
 	@Override

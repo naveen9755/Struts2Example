@@ -38,7 +38,7 @@ public class VideoServiceImpl implements VideoService {
 
 	@Override
 	public List<Video> listVideo() {
-		return crudService.findAll("from Video");
+		return crudService.findAll(Video.ALL_VIDEOS);
 	}
 
 	@Override

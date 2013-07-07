@@ -6,18 +6,22 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+@NamedQueries({ @NamedQuery(name = FileMgmt.GET_FILE_MGMT, query = "Select f from FileMgmt f") })
 @Entity
 @Table(name = "FileMgmt")
 public class FileMgmt {
-	
+
+	public static final String GET_FILE_MGMT = "com.swift.example.model.FileMgmt.GET_FILE_MGMT";
 	private Long id;
 	private String imageFile;
 	private String contentImageType;
 	private String filePath;
 	private Date createdOn;
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name = "FILE_ID")
@@ -33,7 +37,7 @@ public class FileMgmt {
 	public String getImageFile() {
 		return imageFile;
 	}
-	
+
 	public void setImageFile(String imageFile) {
 		this.imageFile = imageFile;
 	}
@@ -46,7 +50,7 @@ public class FileMgmt {
 	public void setContentImageType(String contentImageType) {
 		this.contentImageType = contentImageType;
 	}
-	
+
 	@Column(name = "FILE_PATH")
 	public String getFilePath() {
 		return filePath;
@@ -64,5 +68,5 @@ public class FileMgmt {
 	public void setCreatedOn(Date createdOn) {
 		this.createdOn = createdOn;
 	}
-	
+
 }

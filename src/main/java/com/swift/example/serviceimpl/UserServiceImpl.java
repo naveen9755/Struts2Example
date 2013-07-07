@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
 	public boolean verifyUser(User user) {
 		String username = user.getUsername();
 		String password = user.getPassword();
-		Query query = crudService.find("Select u from User u where u.username = :username and u.password = :password");
+		Query query = crudService.findByNameQuery(User.AUTHENTICATE_USER);
 		query.setParameter("username", username);
 		query.setParameter("password", password);
 		try {
@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> listUser() {
-		return crudService.findAll("from User");
+		return crudService.findAll(User.GET_ALL_USER);
 	}
 
 	@Override
@@ -70,7 +70,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User getUser(String username) {
-		Query query = crudService.find("Select u from User u where u.username = :username");
+		Query query = crudService.find(User.GET_USER);
 		query.setParameter("username", username);
 		try {
 			User user = (User) query.getSingleResult();

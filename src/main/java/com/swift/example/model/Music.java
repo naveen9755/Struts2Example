@@ -6,11 +6,16 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+@NamedQueries({ @NamedQuery(name = Music.ALL_MUSIC, query = "Select m from Music m") })
 @Entity
 @Table(name = "Music")
 public class Music {
+
+	public static final String ALL_MUSIC = "com.swift.example.model.Music.ALL_MUSIC";
 
 	private Long id;
 	private String name;

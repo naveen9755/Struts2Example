@@ -18,4 +18,6 @@ public interface CrudService {
 	
 	@SuppressWarnings("rawtypes")
 	public <T> List findUsingSP(String query);
+	
+	public <T> T findByNameQuery(String query);
 }

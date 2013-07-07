@@ -6,26 +6,24 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+@NamedQueries({ @NamedQuery(name = Video.ALL_VIDEOS, query = "Select v from Video v") })
 @Entity
 @Table(name = "Video")
 public class Video {
-	
-	private Long id;
 
+	public static final String ALL_VIDEOS = "com.swift.example.model.ALL_VIDEOS";
+	private Long id;
 	private String name;
-	
 	private String actor;
-	
 	private String director;
-	
 	private String writer;
-	
 	private String category;
-	
 	private Date createdOn;
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name = "VIDEO_ID")

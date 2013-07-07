@@ -80,19 +80,25 @@ public class CrudServiceImpl implements CrudService {
 	@SuppressWarnings("unchecked")
 	@Override
 	public <T> List<T> findAll(String query) {
-		return this.em.createQuery(query).getResultList();
+		return this.em.createNamedQuery(query).getResultList();
 	}
 	
 	@SuppressWarnings("unchecked")
 	@Override
 	public <T> T find(String query) {
-		return (T) this.em.createQuery(query);
+		return (T) this.em.createNamedQuery(query);
 	}
 
 	@SuppressWarnings("rawtypes")
 	@Override
 	public <T> List findUsingSP(String query) {
 		return this.em.createNativeQuery(query).getResultList();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public <T> T findByNameQuery(String query) {
+		return (T) this.em.createNamedQuery(query);
 	}
 
 }

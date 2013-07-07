@@ -19,7 +19,7 @@ public class FileMgmtServiceImpl implements FileMgmtService {
 
 	@Override
 	public List<FileMgmt> listFiles() {
-		return crudService.findAll("from FileMgmt");
+		return crudService.findAll(FileMgmt.GET_FILE_MGMT);
 	}
 
 	@Override
