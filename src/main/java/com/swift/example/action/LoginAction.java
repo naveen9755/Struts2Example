@@ -18,11 +18,13 @@ import com.swift.example.mailer.Mailer;
 import com.swift.example.model.User;
 import com.swift.example.service.UserService;
 
-public class LoginAction extends ActionSupport implements ModelDriven<User>, SessionAware {
-	
+public class LoginAction extends ActionSupport implements ModelDriven<User>,
+		SessionAware {
+
 	private static final long serialVersionUID = 1L;
-	private static final Logger log = Logger.getLogger(LoginAction.class.getName());
-	
+	private static final Logger log = Logger.getLogger(LoginAction.class
+			.getName());
+
 	@Inject("users")
 	private UserService userService;
 	@Inject("mailer")
@@ -30,50 +32,52 @@ public class LoginAction extends ActionSupport implements ModelDriven<User>, Ses
 	private User user = new User();
 	private Map<String, Object> session;
 	private String email;
-	
+
 	// Instance Variables for form submission
 	private String user_name;
 	private String pass_word;
 	private String rePassword;
 	private String recaptcha_challenge_field;
 	private String recaptcha_response_field;
-	
+
 	public String login() {
-		if(userService.verifyUser(user)) {
+		if (userService.verifyUser(user)) {
 			this.session.put("loggedInUser", user.getUsername());
 			return SUCCESS;
 		}
 		addActionError("Invalid Username or Password...");
 		return LOGIN;
 	}
-	
+
 	public String logout() {
 		log.info("Logged out successfully...");
 		this.session.remove("loggedInUser");
 		return SUCCESS;
 	}
-	
+
 	public String forgotPassword() {
 		return SUCCESS;
 	}
-	
+
 	public String sendPassword() {
 		log.info("Sending Password....");
 		User user = userService.getUser(this.getEmail().trim());
-		if(user == null) {
+		if (user == null) {
 			addActionError("User not found with given email address.");
 			return ERROR;
 		}
 		String remoteAddr = ServletActionContext.getRequest().getRemoteAddr();
 		ReCaptchaImpl reCaptcha = new ReCaptchaImpl();
 		reCaptcha.setPrivateKey("6LfAiuMSAAAAAM3s9whwil_kWlbYywhth3o2P1H7");
-		ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(remoteAddr, recaptcha_challenge_field, recaptcha_response_field);
+		ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(remoteAddr,
+				recaptcha_challenge_field, recaptcha_response_field);
 		boolean valid = reCaptchaResponse.isValid();
-		if(valid) {
+		if (valid) {
 			Email email = new Email();
 			email.setTo(this.getEmail());
 			email.setSubject("Forgot Password...");
-			email.setMessage("Your Password: <strong>" + user.getPassword() + "</strong>");
+			email.setMessage("Your Password: <strong>" + user.getPassword()
+					+ "</strong>");
 			mailer.sendMail(email);
 			addActionMessage("Your Password has been sent to your email address now.");
 			return SUCCESS;
@@ -82,33 +86,34 @@ public class LoginAction extends ActionSupport implements ModelDriven<User>, Ses
 			return ERROR;
 		}
 	}
-	
+
 	public String signUp() {
 		return SUCCESS;
 	}
-	
+
 	public String registerUser() {
 		String remoteAddr = ServletActionContext.getRequest().getRemoteAddr();
 		ReCaptchaImpl reCaptcha = new ReCaptchaImpl();
 		reCaptcha.setPrivateKey("6LfAiuMSAAAAAM3s9whwil_kWlbYywhth3o2P1H7");
-		ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(remoteAddr, recaptcha_challenge_field, recaptcha_response_field);
+		ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(remoteAddr,
+				recaptcha_challenge_field, recaptcha_response_field);
 		boolean valid = reCaptchaResponse.isValid();
 		log.info("Username: " + this.getUser_name());
 		log.info("Password: " + this.getPass_word());
 		log.info("Re-Password: " + this.getRePassword());
-		
+
 		// Check User for unique username.
-		if(checkUser(this.getUser_name().toLowerCase().trim())) {
+		if (checkUser(this.getUser_name().toLowerCase().trim())) {
 			addActionError("You have already been registered with this ID.");
 			return ERROR;
 		}
-		
+
 		// Check both password and re-password for verification.
-		if(!checkPassword(this.getPass_word(), this.getRePassword())) {
+		if (!checkPassword(this.getPass_word(), this.getRePassword())) {
 			addActionError("Password and re-type password doesn't match to each other.");
 			return ERROR;
 		}
-		if(valid) {
+		if (valid) {
 			user.setUsername(this.getUser_name().toLowerCase().trim());
 			user.setPassword(this.getPass_word().trim());
 			user.setCreated_on(new Date());
@@ -120,24 +125,24 @@ public class LoginAction extends ActionSupport implements ModelDriven<User>, Ses
 			return ERROR;
 		}
 	}
-	
+
 	private boolean checkPassword(String p1, String p2) {
-		if(p1.equals(p2)) {
+		if (p1.equals(p2)) {
 			return true;
 		}
 		return false;
 	}
-	
+
 	private boolean checkUser(String u1) {
 		log.info("Username: " + u1);
 		User user = userService.getUser(u1);
-		if(user != null) {
+		if (user != null) {
 			return true;
 		} else {
 			return false;
 		}
 	}
-	
+
 	@Override
 	public User getModel() {
 		return user;
@@ -147,7 +152,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<User>, Ses
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-	
+
 	public Map<String, Object> getSession() {
 		return session;
 	}

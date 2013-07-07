@@ -15,36 +15,40 @@ import com.opensymphony.xwork2.inject.Inject;
 import com.swift.example.model.Video;
 import com.swift.example.service.VideoService;
 
-public class VideoAction extends ActionSupport implements ModelDriven<Video>{
-	
+public class VideoAction extends ActionSupport implements ModelDriven<Video> {
+
 	private static final long serialVersionUID = 1L;
-	private static final Logger log = Logger.getLogger(VideoAction.class.getName());
-	
+	private static final Logger log = Logger.getLogger(VideoAction.class
+			.getName());
+
 	@Inject("videoService")
 	private VideoService videoService;
 	private List<Video> videoList = new ArrayList<Video>();
 	private Video video = new Video();
-	
+
 	public String addVideo() {
 		log.info("Inside Add Video....");
 		videoService.addVideo(video);
 		return SUCCESS;
 	}
-	
+
 	public String editVideo() {
 		log.info("Edit Video ");
-		HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
-		video = videoService.getVideo(Long.parseLong(request.getParameter("id")));
+		HttpServletRequest request = (HttpServletRequest) ActionContext
+				.getContext().get(ServletActionContext.HTTP_REQUEST);
+		video = videoService
+				.getVideo(Long.parseLong(request.getParameter("id")));
 		return SUCCESS;
 	}
-	
+
 	public String removeVideo() {
 		log.info("Remove Video");
-		HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+		HttpServletRequest request = (HttpServletRequest) ActionContext
+				.getContext().get(ServletActionContext.HTTP_REQUEST);
 		videoService.removeVideo(Long.parseLong(request.getParameter("id")));
 		return SUCCESS;
 	}
-	
+
 	public String listVideo() {
 		log.info("Number of Videos: " + videoService.listVideo().size());
 		videoList = videoService.listVideo();

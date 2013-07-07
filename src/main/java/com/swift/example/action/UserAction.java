@@ -16,22 +16,23 @@ import com.opensymphony.xwork2.inject.Inject;
 import com.swift.example.model.User;
 import com.swift.example.service.UserService;
 
-public class UserAction extends ActionSupport implements ModelDriven<User>{
+public class UserAction extends ActionSupport implements ModelDriven<User> {
 
 	private static final long serialVersionUID = 640996836030354264L;
-	private static final Logger log = Logger.getLogger(UserAction.class.getName());
-	
+	private static final Logger log = Logger.getLogger(UserAction.class
+			.getName());
+
 	@Inject("users")
 	private UserService userService;
 	private User user = new User();
 	private List<User> userList = new ArrayList<User>();
-	
+
 	public String listUser() {
 		log.info("List the users");
 		userList = userService.listUser();
 		return SUCCESS;
 	}
-	
+
 	public String addUser() {
 		log.info("Username: " + user.getUsername());
 		log.info("Password: " + user.getPassword());
@@ -40,16 +41,19 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 		userService.addUser(user);
 		return SUCCESS;
 	}
-	
+
 	public String editUser() {
-		HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+		HttpServletRequest request = (HttpServletRequest) ActionContext
+				.getContext().get(ServletActionContext.HTTP_REQUEST);
 		log.info("User ID: " + request.getParameter("id"));
-		user = userService.listUserById(Long.parseLong(request.getParameter("id")));
+		user = userService.listUserById(Long.parseLong(request
+				.getParameter("id")));
 		return SUCCESS;
 	}
-	
+
 	public String removeUser() {
-		HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+		HttpServletRequest request = (HttpServletRequest) ActionContext
+				.getContext().get(ServletActionContext.HTTP_REQUEST);
 		log.info("User ID: " + request.getParameter("id"));
 		userService.deleteUser(Long.parseLong(request.getParameter("id")));
 		return SUCCESS;
@@ -67,5 +71,5 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 	public void setUserList(List<User> userList) {
 		this.userList = userList;
 	}
-	
+
 }
