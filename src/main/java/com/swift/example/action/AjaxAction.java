@@ -25,7 +25,7 @@ public class AjaxAction extends ActionSupport {
 		if (StringUtils.isBlank(name)) {
 			this.name = "No Contents to Show :(";
 		} else {
-			this.name = name;
+			this.name =  "You wrote: " + name;
 		}
 	}
 }
