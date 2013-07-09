@@ -24,7 +24,7 @@ public class MusicController implements ModelDriven<Object>, ServletRequestAware
 			.getName());
 	
 	// GET /music
-	public HttpHeaders index() {
+	public HttpHeaders execute() {
 		log.info("Inside INDEX OF MUSIC CONTROLLER");
 		String acceptHeader = request.getHeader("accept");
 		log.info("HEADER: " + acceptHeader);
