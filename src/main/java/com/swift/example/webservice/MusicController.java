@@ -28,7 +28,7 @@ public class MusicController implements ModelDriven<Object>, ServletRequestAware
 		log.info("Inside INDEX OF MUSIC CONTROLLER");
 		String acceptHeader = request.getHeader("accept");
 		log.info("HEADER: " + acceptHeader);
-        if(acceptHeader.equals("application/xml")) {
+        if(acceptHeader.contains("application/xml")) {
             setRepresentation(musicBO.getAllXML());
         } else if(acceptHeader.equals("application/json")){
             setRepresentation(musicBO.getAllJSON());
