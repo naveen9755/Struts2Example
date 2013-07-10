@@ -25,7 +25,7 @@
 				<s:textfield name="lyricist" cssClass="input-block-level" placeholder="Lyricist" required="true"/>
 				<s:submit value="Submit" cssClass="btn btn-primary"/>
 			</s:push>
-	   </s:form>
+	   	</s:form>
 	   	<s:if test="musicList.size() > 0">
 	   	<table>
 	   	<tr>
@@ -66,7 +66,9 @@
 	   		</tr>
 	   	</s:iterator>
 	   	</table>
-	   	<p><br/><br/>
+	   	<p>
+	   	<a href="<%=request.getContextPath()%>/struts/music.xml">Music XML Data for Web Service</a>
+	   	<br/><br/>
 	   	<d:table name="musicList" pagesize="5" requestURI="listMusic.html" export="true">
 	   		<d:column property="name" title="Name of Song" sortable="true"/>
 	   		<d:column property="singer" title="Singer" sortable="true"/>
