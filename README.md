@@ -12,5 +12,3 @@ Struts 2 Show Case Example
 * Forgot Password implementation with Java Mail.
 * Error Pages implementation like 404 Page Not Found and 500 Internal Server Error.
 * REST Based Web Service implementation.
-* Using Stored Procedure.
-* Jasper Report Integration.
